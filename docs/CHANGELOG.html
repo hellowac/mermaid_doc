@@ -1,0 +1,1080 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Changelog - Mermaid zh-cn doc</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="explain.html">说明</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">中文</li><li class="chapter-item affix "><li class="part-title">📔 简介</li><li class="chapter-item "><a href="about_mermaid/index.html"><strong aria-hidden="true">1.</strong> 关于</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="about_mermaid/diagram_types.html"><strong aria-hidden="true">1.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="about_mermaid/install.html"><strong aria-hidden="true">1.2.</strong> 安装</a></li><li class="chapter-item "><a href="about_mermaid/sibling_projects.html"><strong aria-hidden="true">1.3.</strong> 相关项目</a></li></ol></li><li class="chapter-item "><a href="quick_start/index.html"><strong aria-hidden="true">2.</strong> 快速开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="quick_start/diagram_types.html"><strong aria-hidden="true">2.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="quick_start/four_ways.html"><strong aria-hidden="true">2.2.</strong> 4种使用方式</a></li><li class="chapter-item "><a href="quick_start/use_live_editor.html"><strong aria-hidden="true">2.3.</strong> 一在线编辑</a></li><li class="chapter-item "><a href="quick_start/use_mermaid_plugin.html"><strong aria-hidden="true">2.4.</strong> 二插件方式</a></li><li class="chapter-item "><a href="quick_start/use_js_api.html"><strong aria-hidden="true">2.5.</strong> 三使用JS API</a></li><li class="chapter-item "><a href="quick_start/use_add_dependency.html"><strong aria-hidden="true">2.6.</strong> 四添加依赖</a></li></ol></li><li class="chapter-item "><a href="syntax_reference/index.html"><strong aria-hidden="true">3.</strong> 语法和配置</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="syntax_reference/syntax_structure.html"><strong aria-hidden="true">3.1.</strong> 语法结构</a></li><li class="chapter-item "><a href="syntax_reference/mermaid_breaking.html"><strong aria-hidden="true">3.2.</strong> 特殊字符</a></li><li class="chapter-item "><a href="syntax_reference/configuration.html"><strong aria-hidden="true">3.3.</strong> 配置</a></li></ol></li><li class="chapter-item "><li class="part-title">📊 图表语法</li><li class="chapter-item "><a href="flowchart/index.html"><strong aria-hidden="true">4.</strong> 流程图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="flowchart/graph.html"><strong aria-hidden="true">4.1.</strong> 绘制</a></li><li class="chapter-item "><a href="flowchart/orientation.html"><strong aria-hidden="true">4.2.</strong> 绘制方向</a></li><li class="chapter-item "><a href="flowchart/node_shapes.html"><strong aria-hidden="true">4.3.</strong> 节点图形</a></li><li class="chapter-item "><a href="flowchart/links_between_nodes.html"><strong aria-hidden="true">4.4.</strong> 连接节点</a></li><li class="chapter-item "><a href="flowchart/special_characters.html"><strong aria-hidden="true">4.5.</strong> 破坏语法的特殊字符</a></li><li class="chapter-item "><a href="flowchart/subgraphs.html"><strong aria-hidden="true">4.6.</strong> 子图</a></li><li class="chapter-item "><a href="flowchart/beta_flowcharts.html"><strong aria-hidden="true">4.7.</strong> 测试流程图</a></li><li class="chapter-item "><a href="flowchart/direction_in_subgraphs.html"><strong aria-hidden="true">4.8.</strong> 子图绘制方向</a></li><li class="chapter-item "><a href="flowchart/interaction.html"><strong aria-hidden="true">4.9.</strong> 交互</a></li><li class="chapter-item "><a href="flowchart/styling_and_classes.html"><strong aria-hidden="true">4.10.</strong> 类样式</a></li><li class="chapter-item "><a href="flowchart/basic-support-for-fontawesome.html"><strong aria-hidden="true">4.11.</strong> 对 fontawesome 的基本支持</a></li><li class="chapter-item "><a href="flowchart/graph_declarations.html"><strong aria-hidden="true">4.12.</strong> 图形声明</a></li><li class="chapter-item "><a href="flowchart/configuration.html"><strong aria-hidden="true">4.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="sequence/index.html"><strong aria-hidden="true">5.</strong> 序列图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="sequence/syntax.html"><strong aria-hidden="true">5.1.</strong> 语法</a></li><li class="chapter-item "><a href="sequence/messages.html"><strong aria-hidden="true">5.2.</strong> 消息</a></li><li class="chapter-item "><a href="sequence/activations.html"><strong aria-hidden="true">5.3.</strong> 活跃</a></li><li class="chapter-item "><a href="sequence/notes.html"><strong aria-hidden="true">5.4.</strong> 笔记</a></li><li class="chapter-item "><a href="sequence/loops.html"><strong aria-hidden="true">5.5.</strong> 循环</a></li><li class="chapter-item "><a href="sequence/alt.html"><strong aria-hidden="true">5.6.</strong> 分支</a></li><li class="chapter-item "><a href="sequence/parallel.html"><strong aria-hidden="true">5.7.</strong> 并行</a></li><li class="chapter-item "><a href="sequence/background.html"><strong aria-hidden="true">5.8.</strong> 背景色</a></li><li class="chapter-item "><a href="sequence/comments.html"><strong aria-hidden="true">5.9.</strong> 注释</a></li><li class="chapter-item "><a href="sequence/code_to_char.html"><strong aria-hidden="true">5.10.</strong> 转义字符的实体代码</a></li><li class="chapter-item "><a href="sequence/sequence_numbers.html"><strong aria-hidden="true">5.11.</strong> 序号</a></li><li class="chapter-item "><a href="sequence/styling.html"><strong aria-hidden="true">5.12.</strong> 样式</a></li><li class="chapter-item "><a href="sequence/configuration.html"><strong aria-hidden="true">5.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="class/index.html"><strong aria-hidden="true">6.</strong> 类图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="class/syntax.html"><strong aria-hidden="true">6.1.</strong> 语法</a></li><li class="chapter-item "><a href="class/define_a_class.html"><strong aria-hidden="true">6.2.</strong> 定义类</a></li><li class="chapter-item "><a href="class/defining_members_of_a_class.html"><strong aria-hidden="true">6.3.</strong> 定义成员</a></li><li class="chapter-item "><a href="class/defining_relationship.html"><strong aria-hidden="true">6.4.</strong> 定义关系</a></li><li class="chapter-item "><a href="class/cardinality_multiplicity_on_relations.html"><strong aria-hidden="true">6.5.</strong> 多重性</a></li><li class="chapter-item "><a href="class/annotations_on_classes.html"><strong aria-hidden="true">6.6.</strong> 类的注释</a></li><li class="chapter-item "><a href="class/comments.html"><strong aria-hidden="true">6.7.</strong> 注释</a></li><li class="chapter-item "><a href="class/setting_the_direction_of_the_diagram.html"><strong aria-hidden="true">6.8.</strong> 绘图方向</a></li><li class="chapter-item "><a href="class/interaction.html"><strong aria-hidden="true">6.9.</strong> 交互</a></li><li class="chapter-item "><a href="class/styling.html"><strong aria-hidden="true">6.10.</strong> 样式</a></li><li class="chapter-item "><a href="class/configuration.html"><strong aria-hidden="true">6.11.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="state/index.html"><strong aria-hidden="true">7.</strong> 状态图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="state/states.html"><strong aria-hidden="true">7.1.</strong> 状态</a></li><li class="chapter-item "><a href="state/transitions.html"><strong aria-hidden="true">7.2.</strong> 过渡</a></li><li class="chapter-item "><a href="state/start-and-end.html"><strong aria-hidden="true">7.3.</strong> 开始和结束</a></li><li class="chapter-item "><a href="state/composite-states.html"><strong aria-hidden="true">7.4.</strong> 复合状态</a></li><li class="chapter-item "><a href="state/choice.html"><strong aria-hidden="true">7.5.</strong> 选择</a></li><li class="chapter-item "><a href="state/forks.html"><strong aria-hidden="true">7.6.</strong> 克隆</a></li><li class="chapter-item "><a href="state/notes.html"><strong aria-hidden="true">7.7.</strong> 笔记</a></li><li class="chapter-item "><a href="state/concurrency.html"><strong aria-hidden="true">7.8.</strong> 并发</a></li><li class="chapter-item "><a href="state/setting-the-direction-of-the-diagram.html"><strong aria-hidden="true">7.9.</strong> 绘制方向</a></li><li class="chapter-item "><a href="state/comments.html"><strong aria-hidden="true">7.10.</strong> 注释</a></li><li class="chapter-item "><a href="state/styling.html"><strong aria-hidden="true">7.11.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="entity_relationship/index.html"><strong aria-hidden="true">8.</strong> ER图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="entity_relationship/syntax.html"><strong aria-hidden="true">8.1.</strong> 语法</a></li><li class="chapter-item "><a href="entity_relationship/styling.html"><strong aria-hidden="true">8.2.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="user_journey.html"><strong aria-hidden="true">9.</strong> 用户旅程图</a></li><li class="chapter-item "><a href="gantt/index.html"><strong aria-hidden="true">10.</strong> 甘特图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="gantt/note.html"><strong aria-hidden="true">10.1.</strong> 笔记</a></li><li class="chapter-item "><a href="gantt/syntax.html"><strong aria-hidden="true">10.2.</strong> 语法</a></li><li class="chapter-item "><a href="gantt/setting-dates.html"><strong aria-hidden="true">10.3.</strong> 设置日期</a></li><li class="chapter-item "><a href="gantt/comments.html"><strong aria-hidden="true">10.4.</strong> 注释</a></li><li class="chapter-item "><a href="gantt/styling.html"><strong aria-hidden="true">10.5.</strong> 样式</a></li><li class="chapter-item "><a href="gantt/today-marker.html"><strong aria-hidden="true">10.6.</strong> 当日标记</a></li><li class="chapter-item "><a href="gantt/configuration.html"><strong aria-hidden="true">10.7.</strong> 配置</a></li><li class="chapter-item "><a href="gantt/interaction.html"><strong aria-hidden="true">10.8.</strong> 交互</a></li></ol></li><li class="chapter-item "><a href="pie/index.html"><strong aria-hidden="true">11.</strong> 饼图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pie/syntax.html"><strong aria-hidden="true">11.1.</strong> 语法</a></li><li class="chapter-item "><a href="pie/example.html"><strong aria-hidden="true">11.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="requirement/index.html"><strong aria-hidden="true">12.</strong> 需求图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="requirement/syntax.html"><strong aria-hidden="true">12.1.</strong> 语法</a></li><li class="chapter-item "><a href="requirement/example.html"><strong aria-hidden="true">12.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="examples/index.html"><strong aria-hidden="true">13.</strong> 其他样例</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="examples/pie.html"><strong aria-hidden="true">13.1.</strong> 基本饼图</a></li><li class="chapter-item "><a href="examples/sequence.html"><strong aria-hidden="true">13.2.</strong> 基本序列图</a></li><li class="chapter-item "><a href="examples/flowchart.html"><strong aria-hidden="true">13.3.</strong> 基本流程图</a></li><li class="chapter-item "><a href="examples/flowchart_styling.html"><strong aria-hidden="true">13.4.</strong> 流程图和样式</a></li><li class="chapter-item "><a href="examples/sequence_loop.html"><strong aria-hidden="true">13.5.</strong> 序列图:循环，分支</a></li><li class="chapter-item "><a href="examples/sequence_message.html"><strong aria-hidden="true">13.6.</strong> 序列图:自循环</a></li></ol></li><li class="chapter-item "><li class="part-title">⚙️ 部署和配置</li><li class="chapter-item "><a href="tutorials.html"><strong aria-hidden="true">14.</strong> 教程</a></li><li class="chapter-item "><a href="usage/index.html"><strong aria-hidden="true">15.</strong> API 用法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/using_mermaid.html"><strong aria-hidden="true">15.1.</strong> 使用Mermaid</a></li><li class="chapter-item "><a href="usage/simple_full_example.html"><strong aria-hidden="true">15.2.</strong> 简单样例</a></li><li class="chapter-item "><a href="usage/notes.html"><strong aria-hidden="true">15.3.</strong> 注意</a></li><li class="chapter-item "><a href="usage/enable_click_event_and_tags_in_nodes.html"><strong aria-hidden="true">15.4.</strong> 在节点中启用点击事件和标签</a></li><li class="chapter-item "><a href="usage/security_level.html"><strong aria-hidden="true">15.5.</strong> 安全级别</a></li><li class="chapter-item "><a href="usage/usage_with_webpack.html"><strong aria-hidden="true">15.6.</strong> 与webpack使用</a></li><li class="chapter-item "><a href="usage/api_usage.html"><strong aria-hidden="true">15.7.</strong> api用法</a></li><li class="chapter-item "><a href="usage/example_of_a_marked_renderer.html"><strong aria-hidden="true">15.8.</strong> 于marked使用样例</a></li><li class="chapter-item "><a href="usage/advanced_usage.html"><strong aria-hidden="true">15.9.</strong> 高级用法</a></li><li class="chapter-item "><a href="usage/configuration.html"><strong aria-hidden="true">15.10.</strong> 配置</a></li><li class="chapter-item "><a href="usage/using_the_initialize_call.html"><strong aria-hidden="true">15.11.</strong> 调用initialize</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_object.html"><strong aria-hidden="true">15.12.</strong> 使用mermaid对象</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_config.html"><strong aria-hidden="true">15.13.</strong> 使用mermaid配置</a></li><li class="chapter-item "><a href="usage/using_the_mermaidinit_call.html"><strong aria-hidden="true">15.14.</strong> 调用mermaid.init</a></li></ol></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">16.</strong> Mermaid API</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">17.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">18.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">19.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">20.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 杂项</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">21.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">22.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 贡献和社区</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">23.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">24.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html" class="active"><strong aria-hidden="true">25.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">26.</strong> Adding Diagrams</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">原文</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">📔 Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">27.</strong> About Mermaid</a></li><li class="chapter-item "><a href="n00b-gettingStarted.html"><strong aria-hidden="true">28.</strong> Deployment</a></li><li class="chapter-item "><a href="n00b-syntaxReference.html"><strong aria-hidden="true">29.</strong> Syntax and Configuration</a></li><li class="chapter-item affix "><li class="part-title">📊 Diagram Syntax</li><li class="chapter-item "><a href="flowchart.html"><strong aria-hidden="true">30.</strong> Flowchart</a></li><li class="chapter-item "><a href="sequenceDiagram.html"><strong aria-hidden="true">31.</strong> Sequence diagram</a></li><li class="chapter-item "><a href="classDiagram.html"><strong aria-hidden="true">32.</strong> Class Diagram</a></li><li class="chapter-item "><a href="stateDiagram.html"><strong aria-hidden="true">33.</strong> State Diagram</a></li><li class="chapter-item "><a href="entityRelationshipDiagram.html"><strong aria-hidden="true">34.</strong> Entity Relationship Diagram</a></li><li class="chapter-item "><a href="user-journey.html"><strong aria-hidden="true">35.</strong> User Journey</a></li><li class="chapter-item "><a href="gantt.html"><strong aria-hidden="true">36.</strong> Gantt</a></li><li class="chapter-item "><a href="pie.html"><strong aria-hidden="true">37.</strong> Pie Chart</a></li><li class="chapter-item "><a href="requirementDiagram.html"><strong aria-hidden="true">38.</strong> Requirement Diagram</a></li><li class="chapter-item "><a href="examples.html"><strong aria-hidden="true">39.</strong> Other Examples</a></li><li class="chapter-item affix "><li class="part-title">⚙️ Deployment and Configuration</li><li class="chapter-item "><a href="Tutorials.html"><strong aria-hidden="true">40.</strong> Tutorials</a></li><li class="chapter-item "><a href="usage.html"><strong aria-hidden="true">41.</strong> API-Usage</a></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">42.</strong> Mermaid API Configuration</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">43.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">44.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">45.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">46.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 Misc</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">47.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">48.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 Contributions and Community</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">49.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">50.</strong> Development and Contribution</a></li><li class="chapter-item expanded "><a href="CHANGELOG.html" class="active"><strong aria-hidden="true">51.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">52.</strong> Adding Diagrams</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Mermaid zh-cn doc</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mermaid-js/mermaid/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hellowac/mermaid_doc/edit/gh-pages/src/CHANGELOG.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="change-log"><a class="header" href="#change-log">Change Log</a></h1>
+<p>Here is the list of the newest versions in Descending Order, beginning from the latest version.</p>
+<h2 id="unreleased"><a class="header" href="#unreleased">Unreleased</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/8.7.0...HEAD">Full Changelog</a></p>
+<h2 id="870-2020-08-09"><a class="header" href="#870-2020-08-09">8.7.0 (2020-08-09)</a></h2>
+<p>🔖 <a href="https://github.com/mermaid-js/mermaid/releases/tag/8.7.0">Release Notes</a> |
+📜 <a href="https://github.com/mermaid-js/mermaid/compare/8.6.0...8.7.0">Full Changelog</a></p>
+<p>This version brings with it a system for <a href="./theming.html">dynamic and integrated configuration of the diagram themes</a>.
+The objective of this is to increase the customizability of mermaid and the ease of Styling, with the customization of themes through the <code>%%init%%</code> directive and <code>initialize</code> calls.</p>
+<p>Themes follow and build upon the Levels of Configuration and employ <code>directives</code> to modify and create custom configurations, as they were introduced in Version <a href="../getting-started/8.6.0_docs.html">8.6.0</a>.</p>
+<p><strong>These Theming Configurations, similar to directives, will also be made applicable in the Live-Editor, for easier styling.</strong></p>
+<h3 id="site-wide-themes"><a class="header" href="#site-wide-themes">Site-wide Themes</a></h3>
+<p>Site-wide themes are still declared via <code>initialize</code> by site owners.</p>
+<p>Example of <code>Initalize</code> call setting <code>theme</code> to <code>base</code>:</p>
+<pre><code class="language-javascript">mermaidAPI.initialize({
+    'securityLevel': 'loose', 'theme': 'base'
+});
+</code></pre>
+<p><strong>Notes</strong>: Only site owners can use the <code>mermaidAPI.initialize</code> call, to set values. Site-Users will have to use <code>%%init%%</code> to modify or create the theme for their diagrams.</p>
+<h3 id="themes-at-the-local-or-current-level"><a class="header" href="#themes-at-the-local-or-current-level">Themes at the Local or Current Level</a></h3>
+<p>When Generating a diagram using on a webpage that supports mermaid.
+It is also possible to override site-wide theme settings locally, for a specific diagram, using directives, as long as it is not prohibited by the <code>secure</code> array.</p>
+<p><strong>Following is an example:</strong></p>
+<pre><code class="language-mmd">%%{init: {'theme':'base'}}%%
+  graph TD
+    a --&gt; b
+</code></pre>
+<h3 id="making-a-custom-theme-with-themevariables"><a class="header" href="#making-a-custom-theme-with-themevariables">Making a Custom Theme with <code>themeVariables</code></a></h3>
+<p>The easiest way to make a custom theme is to start with the base theme, and just modify theme variables through <code>themeVariables</code>, via <code>%%init%%</code>.</p>
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Type</th><th>Required</th><th>Objects contained</th></tr></thead><tbody>
+<tr><td>themeVariables</td><td>Array containing objects, modifiable with the <code>%%init%%</code> directive</td><td>Array</td><td>Required</td><td>primaryColor, lineColor, textColor</td></tr>
+</tbody></table>
+<p>Here is an example of overriding <code>primaryColor</code> and giving everything a different look, using <code>%%init%%</code>.</p>
+<pre><code class="language-mmd">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<p><strong>Notes:</strong>
+Leaving it empty will set all variable values to default.</p>
+<h2 id="860-2020-07-13"><a class="header" href="#860-2020-07-13">8.6.0 (2020-07-13)</a></h2>
+<p>🔖 <a href="https://github.com/mermaid-js/mermaid/releases/tag/8.6.0">Release Notes</a></p>
+<p><a href="../getting-started/8.6.0_docs.html">Version 8.6.0</a> introduces New Configuration Protocols and Directives and a Beta for the <a href="https://mermaid-js.github.io/docs/mermaid-live-editor-beta/#/edit/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJmb3Jlc3RcIiwgXCJsb2dMZXZlbFwiOiAxIH19JSVcbmdyYXBoIFREXG4gIEFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuICBCIC0tPiBDe0xldCBtZSB0aGlua31cbiAgQyAtLT58T25lfCBEW0xhcHRvcF1cbiAgQyAtLT58VHdvfCBFW2lQaG9uZV1cbiAgQyAtLT58VGhyZWV8IEZbZmE6ZmEtY2FyIENhcl1cblx0XHQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGFyayJ9fQ">New Mermaid Live-Editor</a></p>
+<p><strong>With version 8.6.0 comes the release of directives for mermaid, a new system for modifying configurations, with the aim of establishing centralized, sane defaults and simple implementation.</strong></p>
+<p>Directives allow for a diagram specific overriding of config, as it has been discussed in Configurations.
+This allows site users to input modifications to config alongside diagram definitions, when creating diagrams on a private webpage that supports Mermaid.</p>
+<h2 id="850-2020-04-11"><a class="header" href="#850-2020-04-11">8.5.0 (2020-04-11)</a></h2>
+<p>🔖 <a href="https://github.com/mermaid-js/mermaid/releases/tag/untagged-31c93788afe260d914bb">Release Notes</a></p>
+<p>This version introduces New diagrams!</p>
+<p><strong>New diagrams in 8.5</strong></p>
+<p>With version 8.5 there are some bug fixes and enhancements, plus a new diagram type, entity relationship diagrams.</p>
+<p><img src="./img/er.png" alt="Image showing the new ER diagram type" /></p>
+<h2 id="820-2019-07-17"><a class="header" href="#820-2019-07-17">8.2.0 (2019-07-17)</a></h2>
+<p>🏷️ <a href="https://github.com/mermaid-js/mermaid/tree/8.2.0">Tag</a></p>
+<p>Version 8.2.0, introduces a security improvement.</p>
+<p>A <code>securityLevel</code> configuration has to first be cleared, <code>securityLevel</code> sets the level of trust for the parsed diagrams and limits click functionality.
+This was introduced in version 8.2 as a security improvement, aimed at preventing malicious use.</p>
+<h3 id="securitylevel"><a class="header" href="#securitylevel">securityLevel</a></h3>
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Type</th><th>Required</th><th>Values</th></tr></thead><tbody>
+<tr><td>securitylevel</td><td>Level of trust for parsed diagram</td><td>String</td><td>Required</td><td>Strict, Loose, antiscript</td></tr>
+</tbody></table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>strict</strong>: (<strong>default</strong>) tags in text are encoded, click functionality is disabled</li>
+<li><strong>loose</strong>: tags in text are allowed, click functionality is enabled</li>
+<li><strong>antiscript</strong>: html tags in text are allowed, (only script element is removed), click functionality is enabled</li>
+</ul>
+<p>⚠️ <strong>Note</strong>: This changes the default behaviour of mermaid so that after upgrade to 8.2, if the <code>securityLevel</code> is not configured, tags in flowcharts are encoded as tags and clicking is prohibited.</p>
+<p>If you are taking responsibility for the diagram source security you can set the <code>securityLevel</code> to a value of your choosing.
+By doing this clicks and tags are again allowed.</p>
+<h3 id="to-change-securitylevel-with-mermaidapiinitialize"><a class="header" href="#to-change-securitylevel-with-mermaidapiinitialize">To change <code>securityLevel</code> with <code>mermaidAPI.initialize</code>:</a></h3>
+<pre><code class="language-javascript">    mermaidAPI.initialize({
+        securityLevel: 'loose'
+    });
+</code></pre>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>please add tag for 8.0.0 release <a href="https://github.com/knsv/mermaid/issues/863">#863</a></li>
+<li>classDiagram breaks on any edit <a href="https://github.com/knsv/mermaid/issues/858">#858</a></li>
+</ul>
+<h2 id="810-2019-06-25"><a class="header" href="#810-2019-06-25"><a href="https://github.com/knsv/mermaid/tree/8.1.0">8.1.0</a> (2019-06-25)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/7.0.5...8.1.0">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Theme for dark background <a href="https://github.com/knsv/mermaid/issues/301">#301</a></li>
+<li>[Feature request] gantt diagram axis format <a href="https://github.com/knsv/mermaid/issues/269">#269</a></li>
+<li>Implement render function for server side rendering using phantomjs <a href="https://github.com/knsv/mermaid/issues/169">#169</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>mermaid -v filename.mmd gives You must specify at least one source file. <a href="https://github.com/knsv/mermaid/issues/328">#328</a></li>
+<li>Not Able to See Labels even htmlLabels:false added <a href="https://github.com/knsv/mermaid/issues/268">#268</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Gantt and sequence diagram do not render <a href="https://github.com/knsv/mermaid/issues/853">#853</a></li>
+<li>margins around flowchart are not balanced <a href="https://github.com/knsv/mermaid/issues/852">#852</a></li>
+<li>Smaller bundles <a href="https://github.com/knsv/mermaid/issues/843">#843</a></li>
+<li>unicode in labels <a href="https://github.com/knsv/mermaid/issues/776">#776</a></li>
+<li>Hard-changing drawing  of arrows per edge type <a href="https://github.com/knsv/mermaid/issues/775">#775</a></li>
+<li>SequenceDiagram wrong <a href="https://github.com/knsv/mermaid/issues/773">#773</a></li>
+<li>Render mermaid on github pages with simple code  <a href="https://github.com/knsv/mermaid/issues/772">#772</a></li>
+<li>FlowChart - large space between text and the image <a href="https://github.com/knsv/mermaid/issues/754">#754</a></li>
+<li>Class Diagram Issues when using Mermaid in Stackedit <a href="https://github.com/knsv/mermaid/issues/748">#748</a></li>
+<li>Multi-platform CI <a href="https://github.com/knsv/mermaid/issues/744">#744</a></li>
+<li>gantt: sections can't have a colon <a href="https://github.com/knsv/mermaid/issues/742">#742</a></li>
+<li>Yarn build does not add mermaid.min.css to dist <a href="https://github.com/knsv/mermaid/issues/732">#732</a></li>
+<li>Is there a grammar / keyword / more than just the basic examples? <a href="https://github.com/knsv/mermaid/issues/718">#718</a></li>
+<li>Click event and react component <a href="https://github.com/knsv/mermaid/issues/717">#717</a></li>
+<li>Long text going outside the box <a href="https://github.com/knsv/mermaid/issues/706">#706</a></li>
+<li>How to migrate from yUML to mermaid? <a href="https://github.com/knsv/mermaid/issues/704">#704</a></li>
+<li>Issue on Dynamic Creation in PHP <a href="https://github.com/knsv/mermaid/issues/690">#690</a></li>
+<li><code>click &quot;\#target&quot;</code> and <code>click &quot;http://url&quot;</code> should create regular links <a href="https://github.com/knsv/mermaid/issues/689">#689</a></li>
+<li>Support Chinese punctuation <a href="https://github.com/knsv/mermaid/issues/687">#687</a></li>
+<li>[Question] Proper way to install on Mac?  <a href="https://github.com/knsv/mermaid/issues/681">#681</a></li>
+<li>Has Mermaid a graphical interface to make diagrams?  <a href="https://github.com/knsv/mermaid/issues/668">#668</a></li>
+<li>mermaid installation on debian  <a href="https://github.com/knsv/mermaid/issues/649">#649</a></li>
+<li>&quot;Cannot activate&quot; in sequenceDiagram <a href="https://github.com/knsv/mermaid/issues/647">#647</a></li>
+<li>Link (&quot;click&quot; statement) in flowchart does not work in exported SVG <a href="https://github.com/knsv/mermaid/issues/646">#646</a></li>
+<li>How to pass styling  <a href="https://github.com/knsv/mermaid/issues/639">#639</a></li>
+<li>The live editor cant show seq diagram with notes for 8.0.0-alpha.3 <a href="https://github.com/knsv/mermaid/issues/638">#638</a></li>
+<li>import mermaid.css with ES6 + NPM <a href="https://github.com/knsv/mermaid/issues/634">#634</a></li>
+<li>Actor line cuts through other elements <a href="https://github.com/knsv/mermaid/issues/633">#633</a></li>
+<li>Graph TD line out of the picture (left side) <a href="https://github.com/knsv/mermaid/issues/630">#630</a></li>
+<li>Flowchart labels appear &quot;cutoff&quot;  <a href="https://github.com/knsv/mermaid/issues/628">#628</a></li>
+<li>Uncaught TypeError: _.constant is not a function (mermaid.js)  <a href="https://github.com/knsv/mermaid/issues/626">#626</a></li>
+<li>Missing tags and releases for newer versions <a href="https://github.com/knsv/mermaid/issues/623">#623</a></li>
+<li>Mermaid and Leo / Leo Vue <a href="https://github.com/knsv/mermaid/issues/622">#622</a></li>
+<li>mermaidAPI gantt Vue.js <a href="https://github.com/knsv/mermaid/issues/621">#621</a></li>
+<li>Gantt sections are not separated by colors - Fix: set numberSectionStyles to 4 instead of 3 <a href="https://github.com/knsv/mermaid/issues/620">#620</a></li>
+<li>how to get mermaidAPI? <a href="https://github.com/knsv/mermaid/issues/617">#617</a></li>
+<li>Error in startOnLoad documentation? <a href="https://github.com/knsv/mermaid/issues/616">#616</a></li>
+<li>Example export to SVG generates error <a href="https://github.com/knsv/mermaid/issues/614">#614</a></li>
+<li>The new online editor does not support previously generated links <a href="https://github.com/knsv/mermaid/issues/613">#613</a></li>
+<li>Grammar / Syntax documentation for flowcharts <a href="https://github.com/knsv/mermaid/issues/607">#607</a></li>
+<li>Mermaid does not work with d3.js <a href="https://github.com/knsv/mermaid/issues/606">#606</a></li>
+<li>Why does this code's flowchart lines get cut-off on screen? <a href="https://github.com/knsv/mermaid/issues/604">#604</a></li>
+<li>click keyword does not fire my callback (on the demo Website too) <a href="https://github.com/knsv/mermaid/issues/603">#603</a></li>
+<li>Online Editor fails to show exported SVG <a href="https://github.com/knsv/mermaid/issues/601">#601</a></li>
+<li>Just saying thanks! <a href="https://github.com/knsv/mermaid/issues/597">#597</a></li>
+<li>stylesheet crashed with other library like abcjs <a href="https://github.com/knsv/mermaid/issues/596">#596</a></li>
+<li>Missing connection <a href="https://github.com/knsv/mermaid/issues/594">#594</a></li>
+<li>How to use mermaid on node.js restful api? <a href="https://github.com/knsv/mermaid/issues/593">#593</a></li>
+<li>Remove status code <a href="https://github.com/knsv/mermaid/issues/589">#589</a></li>
+<li>Golang based editor <a href="https://github.com/knsv/mermaid/issues/588">#588</a></li>
+<li>sequenceDiagram -&gt; notetext css font is hardcoded <a href="https://github.com/knsv/mermaid/issues/587">#587</a></li>
+<li>Multiple graph in the live editor <a href="https://github.com/knsv/mermaid/issues/586">#586</a></li>
+<li>All &lt;svg&gt; elements in page are colored black <a href="https://github.com/knsv/mermaid/issues/584">#584</a></li>
+<li>Styling: classes aren't applied to elements. <a href="https://github.com/knsv/mermaid/issues/582">#582</a></li>
+<li>Rounded connections <a href="https://github.com/knsv/mermaid/issues/580">#580</a></li>
+<li>Arrows are not being shown correctly in the dark theme <a href="https://github.com/knsv/mermaid/issues/578">#578</a></li>
+<li>The documentation for CLI seems outdated. <a href="https://github.com/knsv/mermaid/issues/572">#572</a></li>
+<li>No effect of click event:can not open link <a href="https://github.com/knsv/mermaid/issues/571">#571</a></li>
+<li>Text colors are not correct in VSCODE <a href="https://github.com/knsv/mermaid/issues/570">#570</a></li>
+<li>Nodes aren't aligned properly (just need an explanation) <a href="https://github.com/knsv/mermaid/issues/568">#568</a></li>
+<li>setting margin around figure in R <a href="https://github.com/knsv/mermaid/issues/567">#567</a></li>
+<li>Arrows should Come out in upward and Downward direction from decision Node <a href="https://github.com/knsv/mermaid/issues/566">#566</a></li>
+<li>TypeError: Cannot read property 'select' of undefined <a href="https://github.com/knsv/mermaid/issues/563">#563</a></li>
+<li>A little bug <a href="https://github.com/knsv/mermaid/issues/557">#557</a></li>
+<li>Japanese text appears garbled <a href="https://github.com/knsv/mermaid/issues/554">#554</a></li>
+<li>classdiagram not works in mermaid live_editor  <a href="https://github.com/knsv/mermaid/issues/553">#553</a></li>
+<li>font awesome in link text? <a href="https://github.com/knsv/mermaid/issues/546">#546</a></li>
+<li>q: heard of the cosmogol standard? <a href="https://github.com/knsv/mermaid/issues/545">#545</a></li>
+<li>Arrow heads missing (cli, 7.0.3) <a href="https://github.com/knsv/mermaid/issues/544">#544</a></li>
+<li>No Edge Boxes if useHtmlLabels=false <a href="https://github.com/knsv/mermaid/issues/541">#541</a></li>
+<li>how to change mermaid text color or line text block color？ <a href="https://github.com/knsv/mermaid/issues/534">#534</a></li>
+<li>FlowChart visualization broken when downloading from live editor <a href="https://github.com/knsv/mermaid/issues/533">#533</a></li>
+<li>Can't get flowchart to render paths at the top of the diagram; I even tried the online editor and that shows the same issue. Thoughts? <a href="https://github.com/knsv/mermaid/issues/532">#532</a></li>
+<li>live editor make browser(safari on macOS&amp;iOS) not longer respond <a href="https://github.com/knsv/mermaid/issues/531">#531</a></li>
+<li>css classes need a prefix/namespace <a href="https://github.com/knsv/mermaid/issues/527">#527</a></li>
+<li>input activate/deactivate cause safari unresponding <a href="https://github.com/knsv/mermaid/issues/521">#521</a></li>
+<li>Cannot Render the Mermaid Graph to PDF ? <a href="https://github.com/knsv/mermaid/issues/520">#520</a></li>
+<li>clicking links works from inset in subgraph but not from nodes <a href="https://github.com/knsv/mermaid/issues/516">#516</a></li>
+<li>Strange syntax error - when importing mermaid.js <a href="https://github.com/knsv/mermaid/issues/515">#515</a></li>
+<li>gantt x-axis display <a href="https://github.com/knsv/mermaid/issues/510">#510</a></li>
+<li>phantomjs renamed to phantomjs-prebuilt <a href="https://github.com/knsv/mermaid/issues/508">#508</a></li>
+<li>issue when using sphinxcontrib-mermaid extension for sphinx <a href="https://github.com/knsv/mermaid/issues/507">#507</a></li>
+<li>layout of docs page looks broken <a href="https://github.com/knsv/mermaid/issues/504">#504</a></li>
+<li>Problem showing graph with php on localhost <a href="https://github.com/knsv/mermaid/issues/502">#502</a></li>
+<li>logLevel's option doesn't work at 7.0.0 <a href="https://github.com/knsv/mermaid/issues/501">#501</a></li>
+<li>How do I get the log for a render or parse attempt? <a href="https://github.com/knsv/mermaid/issues/500">#500</a></li>
+<li>Mermaid neutral style style to built in latest release <a href="https://github.com/knsv/mermaid/issues/499">#499</a></li>
+<li>Any plans for adding a typescript definition file? <a href="https://github.com/knsv/mermaid/issues/495">#495</a></li>
+<li>Gantt diagrams too narrow <a href="https://github.com/knsv/mermaid/issues/493">#493</a></li>
+<li>Flowchart edge labels placement <a href="https://github.com/knsv/mermaid/issues/490">#490</a></li>
+<li>Very different styles when rendering as png vs. svg <a href="https://github.com/knsv/mermaid/issues/489">#489</a></li>
+<li>New editor that supports mermaid: Caret <a href="https://github.com/knsv/mermaid/issues/488">#488</a></li>
+<li>Gant PNG margin  <a href="https://github.com/knsv/mermaid/issues/486">#486</a></li>
+<li>ReferenceError: window is not defined <a href="https://github.com/knsv/mermaid/issues/485">#485</a></li>
+<li>Menu and layout bugs in docs <a href="https://github.com/knsv/mermaid/issues/484">#484</a></li>
+<li>Mermaid resets some of the page CSS styles <a href="https://github.com/knsv/mermaid/issues/482">#482</a></li>
+<li>Arrows rendering incorrectly in online editor <a href="https://github.com/knsv/mermaid/issues/480">#480</a></li>
+<li>CSS stroke-dasharray ignored by browsers but not other viewers <a href="https://github.com/knsv/mermaid/issues/474">#474</a></li>
+<li>mermaid - Browser Support issue <a href="https://github.com/knsv/mermaid/issues/472">#472</a></li>
+<li>Totally love mermaid I might pop! <a href="https://github.com/knsv/mermaid/issues/471">#471</a></li>
+<li>Sequence Diagram: Missing x on async arrows (png) <a href="https://github.com/knsv/mermaid/issues/469">#469</a></li>
+<li>live editor: the svg file rendered from graph is not supported by browsers <a href="https://github.com/knsv/mermaid/issues/468">#468</a></li>
+<li>Not found css <a href="https://github.com/knsv/mermaid/issues/462">#462</a></li>
+<li>Phantomjs Dependency <a href="https://github.com/knsv/mermaid/issues/461">#461</a></li>
+<li>Mermaid cli not working for subgraphs <a href="https://github.com/knsv/mermaid/issues/459">#459</a></li>
+<li>Support for notes across multiple participants? <a href="https://github.com/knsv/mermaid/issues/458">#458</a></li>
+<li>Related to Issue #329: Phantomjs issues. <a href="https://github.com/knsv/mermaid/issues/455">#455</a></li>
+<li>Add a click style <a href="https://github.com/knsv/mermaid/issues/426">#426</a></li>
+<li>Add Parallel block (par) to sequence diagrams <a href="https://github.com/knsv/mermaid/issues/425">#425</a></li>
+<li>updating shapes after the flow chart rendering complete <a href="https://github.com/knsv/mermaid/issues/424">#424</a></li>
+<li>can't catch parse error Maximum call stack size exceeded on safari <a href="https://github.com/knsv/mermaid/issues/421">#421</a></li>
+<li>Arrows endings are missing <a href="https://github.com/knsv/mermaid/issues/419">#419</a></li>
+<li>shouldn't mermaid become more like Markdown ? <a href="https://github.com/knsv/mermaid/issues/417">#417</a></li>
+<li>Live editor show rendered diagram if syntax invalid <a href="https://github.com/knsv/mermaid/issues/415">#415</a></li>
+<li>Linkstyle stroke does not work <a href="https://github.com/knsv/mermaid/issues/410">#410</a></li>
+<li>flowchart id's with dots in them .. break links  <a href="https://github.com/knsv/mermaid/issues/408">#408</a></li>
+<li>Flowchart: Link text beginning with lowercase 'o' causes flowchart to break <a href="https://github.com/knsv/mermaid/issues/407">#407</a></li>
+<li>Some Chinese character will case Safari no responding. <a href="https://github.com/knsv/mermaid/issues/405">#405</a></li>
+<li>Cannot center-justify text in nodes? <a href="https://github.com/knsv/mermaid/issues/397">#397</a></li>
+<li>Edge labels should have white background in live editor <a href="https://github.com/knsv/mermaid/issues/396">#396</a></li>
+<li>Live editor does not support activate/deactivate <a href="https://github.com/knsv/mermaid/issues/394">#394</a></li>
+<li>Styling subgraph? <a href="https://github.com/knsv/mermaid/issues/391">#391</a></li>
+<li>Update live editor to version 6.0.0 <a href="https://github.com/knsv/mermaid/issues/387">#387</a></li>
+<li>sequence diagram config issue <a href="https://github.com/knsv/mermaid/issues/385">#385</a></li>
+<li>How to add newline in the text <a href="https://github.com/knsv/mermaid/issues/384">#384</a></li>
+<li>PhantomJS crashes on a large graph <a href="https://github.com/knsv/mermaid/issues/380">#380</a></li>
+<li>Finnish support for class diagrams using plantuml syntax  <a href="https://github.com/knsv/mermaid/issues/377">#377</a></li>
+<li>mermaidAPI.render generated different svg code from mermaid.int() <a href="https://github.com/knsv/mermaid/issues/374">#374</a></li>
+<li>Put your own action on the chart <a href="https://github.com/knsv/mermaid/issues/372">#372</a></li>
+<li>when declaring participants the elements are generated twice <a href="https://github.com/knsv/mermaid/issues/370">#370</a></li>
+<li>Example Flowchart is cut in display (Chrome). <a href="https://github.com/knsv/mermaid/issues/368">#368</a></li>
+<li>Add shebang support to diagrams <a href="https://github.com/knsv/mermaid/issues/365">#365</a></li>
+<li>Silencing CLI output <a href="https://github.com/knsv/mermaid/issues/352">#352</a></li>
+<li>SequenceDiagram: 3+ Alternative Paths <a href="https://github.com/knsv/mermaid/issues/348">#348</a></li>
+<li>Smaller height of actor boxes <a href="https://github.com/knsv/mermaid/issues/342">#342</a></li>
+<li>Question: lib/phantomscript.js - foreignObjects in SVG - related to #58 <a href="https://github.com/knsv/mermaid/issues/340">#340</a></li>
+<li>npm test fails on osx being blocked at Can not load &quot;PhantomJS&quot;, it is not registered! <a href="https://github.com/knsv/mermaid/issues/337">#337</a></li>
+<li>Tabs &amp; subgraphs cause rendering error <a href="https://github.com/knsv/mermaid/issues/336">#336</a></li>
+<li>Display question: right angles <a href="https://github.com/knsv/mermaid/issues/335">#335</a></li>
+<li>No Arrows rendered v0.5.8 <a href="https://github.com/knsv/mermaid/issues/330">#330</a></li>
+<li>You had errors in your syntax. Use --help for further information. <a href="https://github.com/knsv/mermaid/issues/327">#327</a></li>
+<li>Allow alternate arrow syntax that doesn't close html comments <a href="https://github.com/knsv/mermaid/issues/322">#322</a></li>
+<li>Comment in subgraph <a href="https://github.com/knsv/mermaid/issues/319">#319</a></li>
+<li>Update graph <a href="https://github.com/knsv/mermaid/issues/311">#311</a></li>
+<li>css conflicts with boostrap's css <a href="https://github.com/knsv/mermaid/issues/308">#308</a></li>
+<li>Can not get click event to fire. <a href="https://github.com/knsv/mermaid/issues/306">#306</a></li>
+<li>Fix phantomjs2 compatibility <a href="https://github.com/knsv/mermaid/issues/304">#304</a></li>
+<li>Flowcharts do not work in native IE11 <a href="https://github.com/knsv/mermaid/issues/303">#303</a></li>
+<li>Integration with remark.js - tutorial added <a href="https://github.com/knsv/mermaid/issues/302">#302</a></li>
+<li>Sequence diagram Loops: changing boxMargin spoils the &quot;loop&quot; notation <a href="https://github.com/knsv/mermaid/issues/299">#299</a></li>
+<li>src/mermaid.js generates bad code <a href="https://github.com/knsv/mermaid/issues/297">#297</a></li>
+<li>Fresh fork: jasmine tests fail <a href="https://github.com/knsv/mermaid/issues/294">#294</a></li>
+<li>CSS clash <a href="https://github.com/knsv/mermaid/issues/292">#292</a></li>
+<li>Mermaid does not work in Chrome 48 <a href="https://github.com/knsv/mermaid/issues/281">#281</a></li>
+<li>circle and ellipse cannot change color by classDef <a href="https://github.com/knsv/mermaid/issues/271">#271</a></li>
+<li>npm run watch doesn't work due missing dependencies <a href="https://github.com/knsv/mermaid/issues/266">#266</a></li>
+<li>label out of node  <a href="https://github.com/knsv/mermaid/issues/262">#262</a></li>
+<li>IE11 Support issue <a href="https://github.com/knsv/mermaid/issues/261">#261</a></li>
+<li>mermaid without browser <a href="https://github.com/knsv/mermaid/issues/260">#260</a></li>
+<li>Insufficient capacity of gantt diagrams <a href="https://github.com/knsv/mermaid/issues/226">#226</a></li>
+<li>some WARN about installation <a href="https://github.com/knsv/mermaid/issues/222">#222</a></li>
+<li>Live editor offline access <a href="https://github.com/knsv/mermaid/issues/217">#217</a></li>
+<li>suggest: code highlight mode config for editors <a href="https://github.com/knsv/mermaid/issues/212">#212</a></li>
+<li>Uncaught RangeError: Maximum call stack size exceeded <a href="https://github.com/knsv/mermaid/issues/189">#189</a></li>
+<li>Styling label texts <a href="https://github.com/knsv/mermaid/issues/50">#50</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Remove console.log in classDB. <a href="https://github.com/knsv/mermaid/pull/861">#861</a> (<a href="https://github.com/Arthaey">Arthaey</a>)</li>
+<li>Bump sshpk from 1.13.1 to 1.16.1 <a href="https://github.com/knsv/mermaid/pull/851">#851</a> (<a href="https://github.com/apps/dependabot">dependabot[bot]</a>)</li>
+<li>Significantly smaller bundles <a href="https://github.com/knsv/mermaid/pull/850">#850</a> (<a href="https://github.com/fabiospampinato">fabiospampinato</a>)</li>
+<li>Support styling of subgraphs <a href="https://github.com/knsv/mermaid/pull/845">#845</a> (<a href="https://github.com/Qix-">Qix-</a>)</li>
+<li>fix dark theme loop labels not visible <a href="https://github.com/knsv/mermaid/pull/837">#837</a> (<a href="https://github.com/jnnnnn">jnnnnn</a>)</li>
+<li>fix draw function can only call once <a href="https://github.com/knsv/mermaid/pull/832">#832</a> (<a href="https://github.com/vaniship">vaniship</a>)</li>
+<li>Fix dotted lines not appearing in flowcharts when HTML labels disabled <a href="https://github.com/knsv/mermaid/pull/828">#828</a> (<a href="https://github.com/stanhu">stanhu</a>)</li>
+<li>Fix issue with XML line breaks inside vertex labels <a href="https://github.com/knsv/mermaid/pull/824">#824</a> (<a href="https://github.com/jsyang">jsyang</a>)</li>
+<li>fixed diagrams <a href="https://github.com/knsv/mermaid/pull/810">#810</a> (<a href="https://github.com/0xflotus">0xflotus</a>)</li>
+<li>Clickable gantt tasks <a href="https://github.com/knsv/mermaid/pull/804">#804</a> (<a href="https://github.com/abzicht">abzicht</a>)</li>
+<li>linkStyle now supports list of indexes with a few tests <a href="https://github.com/knsv/mermaid/pull/798">#798</a> (<a href="https://github.com/ivan-danilov">ivan-danilov</a>)</li>
+<li>fix class diagram mermaid <a href="https://github.com/knsv/mermaid/pull/795">#795</a> (<a href="https://github.com/DanShai">DanShai</a>)</li>
+<li>Added exclude weekdays to definition <a href="https://github.com/knsv/mermaid/pull/792">#792</a> (<a href="https://github.com/jopapo">jopapo</a>)</li>
+<li>SVG link rendering <a href="https://github.com/knsv/mermaid/pull/791">#791</a> (<a href="https://github.com/flying-sheep">flying-sheep</a>)</li>
+<li>Gantt milestones <a href="https://github.com/knsv/mermaid/pull/788">#788</a> (<a href="https://github.com/gijswijs">gijswijs</a>)</li>
+<li>Remove duplicate code <a href="https://github.com/knsv/mermaid/pull/768">#768</a> (<a href="https://github.com/znxkznxk1030">znxkznxk1030</a>)</li>
+<li>Render nodes as real links <a href="https://github.com/knsv/mermaid/pull/765">#765</a> (<a href="https://github.com/flying-sheep">flying-sheep</a>)</li>
+<li>Fix issue with marker-end. <a href="https://github.com/knsv/mermaid/pull/757">#757</a> (<a href="https://github.com/gjlubbertsen">gjlubbertsen</a>)</li>
+<li>Make Class Diagrams usable in Stackedit and Live Editor <a href="https://github.com/knsv/mermaid/pull/749">#749</a> (<a href="https://github.com/monsterkrampe">monsterkrampe</a>)</li>
+<li>Adding trapezoid and inverse trapezoid vertex options. <a href="https://github.com/knsv/mermaid/pull/741">#741</a> (<a href="https://github.com/adamwulf">adamwulf</a>)</li>
+<li>Add option for right angles <a href="https://github.com/knsv/mermaid/pull/721">#721</a> (<a href="https://github.com/paulbland">paulbland</a>)</li>
+<li>Add nested activation classes <a href="https://github.com/knsv/mermaid/pull/720">#720</a> (<a href="https://github.com/paulbland">paulbland</a>)</li>
+<li>wip: class diagram  cardinality display <a href="https://github.com/knsv/mermaid/pull/705">#705</a> (<a href="https://github.com/Vrixyz">Vrixyz</a>)</li>
+<li>add comments about CSS in config <a href="https://github.com/knsv/mermaid/pull/688">#688</a> (<a href="https://github.com/imma90">imma90</a>)</li>
+<li>SequenceDiagram: Add support for multiple alt else statements <a href="https://github.com/knsv/mermaid/pull/641">#641</a> (<a href="https://github.com/sechel">sechel</a>)</li>
+<li>fix #426 - add class .clickable on nodes with click function or link <a href="https://github.com/knsv/mermaid/pull/598">#598</a> (<a href="https://github.com/thomasleveil">thomasleveil</a>)</li>
+<li>Spec fix 1 <a href="https://github.com/knsv/mermaid/pull/595">#595</a> (<a href="https://github.com/frankschmitt">frankschmitt</a>)</li>
+</ul>
+<h2 id="705-2017-09-01"><a class="header" href="#705-2017-09-01"><a href="https://github.com/knsv/mermaid/tree/7.0.5">7.0.5</a> (2017-09-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/7.0.3...7.0.5">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>live editor latin error after update <a href="https://github.com/knsv/mermaid/issues/560">#560</a></li>
+<li>Simple full example in online documentation is broken <a href="https://github.com/knsv/mermaid/issues/558">#558</a></li>
+<li>Graph No Arrow Head v7.0.3 <a href="https://github.com/knsv/mermaid/issues/543">#543</a></li>
+<li>Conflict while using mermaid along with core-js <a href="https://github.com/knsv/mermaid/issues/512">#512</a></li>
+<li>Export to pdf on website <a href="https://github.com/knsv/mermaid/issues/496">#496</a></li>
+<li>New downstream project: Mermaid Preview for VSCode <a href="https://github.com/knsv/mermaid/issues/442">#442</a></li>
+<li>Can't Zoom the flowchart ? <a href="https://github.com/knsv/mermaid/issues/399">#399</a></li>
+<li>line labels are not rendered correctly in live editor <a href="https://github.com/knsv/mermaid/issues/366">#366</a></li>
+<li>mermaid-loader <a href="https://github.com/knsv/mermaid/issues/361">#361</a></li>
+<li>Are there any documentation or examples for classDiagram and gitGraph? <a href="https://github.com/knsv/mermaid/issues/359">#359</a></li>
+<li># character broken in 0.5.8 <a href="https://github.com/knsv/mermaid/issues/347">#347</a></li>
+<li>Documentation issue: CSS example is not visible <a href="https://github.com/knsv/mermaid/issues/345">#345</a></li>
+<li>Include documentation for command line usage <a href="https://github.com/knsv/mermaid/issues/326">#326</a></li>
+<li>Fresh fork: can't build dist <a href="https://github.com/knsv/mermaid/issues/296">#296</a></li>
+<li>Invalid value for &lt;svg&gt; attribute viewBox=&quot;0 0 -Infinity -Infinity&quot; <a href="https://github.com/knsv/mermaid/issues/291">#291</a></li>
+<li>Webpack require fails <a href="https://github.com/knsv/mermaid/issues/277">#277</a></li>
+<li>New documentation - need improved logo <a href="https://github.com/knsv/mermaid/issues/216">#216</a></li>
+</ul>
+<h2 id="703-2017-06-04"><a class="header" href="#703-2017-06-04"><a href="https://github.com/knsv/mermaid/tree/7.0.3">7.0.3</a> (2017-06-04)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/7.0.2...7.0.3">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>the documentation website is down <a href="https://github.com/knsv/mermaid/issues/539">#539</a></li>
+<li>Good example of interactivity with mermaidAPI <a href="https://github.com/knsv/mermaid/issues/514">#514</a></li>
+</ul>
+<h2 id="702-2017-06-01"><a class="header" href="#702-2017-06-01"><a href="https://github.com/knsv/mermaid/tree/7.0.2">7.0.2</a> (2017-06-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/7.0.0...7.0.2">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>CDN is not working <a href="https://github.com/knsv/mermaid/issues/511">#511</a></li>
+<li>A sampe sequenceDiagram crashes mermaid-cli <a href="https://github.com/knsv/mermaid/issues/492">#492</a></li>
+<li>Mermaid doesn't delete nodes when called multiple times <a href="https://github.com/knsv/mermaid/issues/491">#491</a></li>
+<li>API crashes on 2nd render() call <a href="https://github.com/knsv/mermaid/issues/478">#478</a></li>
+<li>sequenceDiagram: dotted line for alt and empty bracket should be hidden <a href="https://github.com/knsv/mermaid/issues/456">#456</a></li>
+<li>SVG output (almost) not correct <a href="https://github.com/knsv/mermaid/issues/434">#434</a></li>
+<li>How to set axisFormatter of gantt in mermaid CLI? <a href="https://github.com/knsv/mermaid/issues/428">#428</a></li>
+<li>customizing link style with any color sets <code>fill</code> property to <code>black</code> instead of <code>none</code> <a href="https://github.com/knsv/mermaid/issues/416">#416</a></li>
+<li>New line at the end of SVG file <a href="https://github.com/knsv/mermaid/issues/400">#400</a></li>
+<li>CLI doesn't work <a href="https://github.com/knsv/mermaid/issues/389">#389</a></li>
+<li>Can't render subgraphs with htmlLabels: false <a href="https://github.com/knsv/mermaid/issues/367">#367</a></li>
+<li>Color arrowhead <a href="https://github.com/knsv/mermaid/issues/362">#362</a></li>
+<li>CLI: Invisible text, lines in SVG output <a href="https://github.com/knsv/mermaid/issues/341">#341</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Support Multi-line Actor Descriptions <a href="https://github.com/knsv/mermaid/pull/764">#764</a> (<a href="https://github.com/watsoncj">watsoncj</a>)</li>
+<li>Update Travis config <a href="https://github.com/knsv/mermaid/pull/538">#538</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+<li>Fix spelling of 'you' in sequenceDiagram docs <a href="https://github.com/knsv/mermaid/pull/537">#537</a> (<a href="https://github.com/ctruelson">ctruelson</a>)</li>
+<li>Improve CLI output <a href="https://github.com/knsv/mermaid/pull/536">#536</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+<li>Modernize mermaid <a href="https://github.com/knsv/mermaid/pull/524">#524</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+<li>Modernize mermaid <a href="https://github.com/knsv/mermaid/pull/519">#519</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+<li>Update CLI instructions <a href="https://github.com/knsv/mermaid/pull/509">#509</a> (<a href="https://github.com/filipedeschamps">filipedeschamps</a>)</li>
+<li>Add style for classDiagram to dark/default theme <a href="https://github.com/knsv/mermaid/pull/503">#503</a> (<a href="https://github.com/yudenzel">yudenzel</a>)</li>
+<li>Fix documentation for git graph. <a href="https://github.com/knsv/mermaid/pull/498">#498</a> (<a href="https://github.com/gomlgs">gomlgs</a>)</li>
+<li>Fix links in documentations <a href="https://github.com/knsv/mermaid/pull/497">#497</a> (<a href="https://github.com/saveman71">saveman71</a>)</li>
+<li>Update README.md with git graph sample <a href="https://github.com/knsv/mermaid/pull/481">#481</a> (<a href="https://github.com/raghur">raghur</a>)</li>
+<li>Fix misspelling of “another” <a href="https://github.com/knsv/mermaid/pull/479">#479</a> (<a href="https://github.com/stevenschobert">stevenschobert</a>)</li>
+<li>Fixed #456 sequenceDiagram: dotted line for alt and empty bracket sho… <a href="https://github.com/knsv/mermaid/pull/477">#477</a> (<a href="https://github.com/brookhong">brookhong</a>)</li>
+<li>Add viewbox attr to class diagram <a href="https://github.com/knsv/mermaid/pull/473">#473</a> (<a href="https://github.com/gnkm">gnkm</a>)</li>
+<li>add par statement to sequenceDiagram <a href="https://github.com/knsv/mermaid/pull/470">#470</a> (<a href="https://github.com/u-minor">u-minor</a>)</li>
+</ul>
+<h2 id="700-2017-01-29"><a class="header" href="#700-2017-01-29"><a href="https://github.com/knsv/mermaid/tree/7.0.0">7.0.0</a> (2017-01-29)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/6.0.0...7.0.0">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>npm install -g mermaid does not install phantomjs <a href="https://github.com/knsv/mermaid/issues/329">#329</a></li>
+<li>activation boxes <a href="https://github.com/knsv/mermaid/issues/313">#313</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>demos on io site not working <a href="https://github.com/knsv/mermaid/issues/466">#466</a></li>
+<li>Can not be generated PNG pictures through CLI with Chinese <a href="https://github.com/knsv/mermaid/issues/451">#451</a></li>
+<li>Round nodes cannot be styled with CSS classes <a href="https://github.com/knsv/mermaid/issues/443">#443</a></li>
+<li>webpack gulp UglifyJsPlugin error. <a href="https://github.com/knsv/mermaid/issues/440">#440</a></li>
+<li>String concatenation isn't working  <a href="https://github.com/knsv/mermaid/issues/432">#432</a></li>
+<li>text flow/wrap in actor box of sequence diagram <a href="https://github.com/knsv/mermaid/issues/422">#422</a></li>
+<li>Online live editor still use old version <a href="https://github.com/knsv/mermaid/issues/402">#402</a></li>
+<li>uncaught TypeError: t.getTransformToElement is not a function <a href="https://github.com/knsv/mermaid/issues/401">#401</a></li>
+<li>Only works when using browserify'd code <a href="https://github.com/knsv/mermaid/issues/373">#373</a></li>
+<li>document the use of shebang line in mmd files <a href="https://github.com/knsv/mermaid/issues/364">#364</a></li>
+<li>Diagrams are small and unreadable in IE 11 - since 0.5.1 <a href="https://github.com/knsv/mermaid/issues/356">#356</a></li>
+<li>[Feature Request] ER-Diagram Support <a href="https://github.com/knsv/mermaid/issues/354">#354</a></li>
+<li>The need for mermaid.css should be mentioned explicitly in the intro docs... <a href="https://github.com/knsv/mermaid/issues/273">#273</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Update index.html <a href="https://github.com/knsv/mermaid/pull/465">#465</a> (<a href="https://github.com/bmsleight">bmsleight</a>)</li>
+<li>Fix for #416, customizing link style with any color sets <code>fill</code> property to <code>black</code> instead of <code>none</code> <a href="https://github.com/knsv/mermaid/pull/452">#452</a> (<a href="https://github.com/joshuacolvin">joshuacolvin</a>)</li>
+<li>Allow .node&gt;circle to receive css styles <a href="https://github.com/knsv/mermaid/pull/449">#449</a> (<a href="https://github.com/bfriedz">bfriedz</a>)</li>
+<li>Fix spelling <a href="https://github.com/knsv/mermaid/pull/447">#447</a> (<a href="https://github.com/jawn">jawn</a>)</li>
+<li>added tests and fix cli css style selector lowercase problem <a href="https://github.com/knsv/mermaid/pull/445">#445</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>Update d3.js <a href="https://github.com/knsv/mermaid/pull/441">#441</a> (<a href="https://github.com/hetz">hetz</a>)</li>
+<li>added tests to reproduce #434 in flowchart <a href="https://github.com/knsv/mermaid/pull/439">#439</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>Code Climate config <a href="https://github.com/knsv/mermaid/pull/437">#437</a> (<a href="https://github.com/larkinscott">larkinscott</a>)</li>
+<li>fix gantt and sequence digram cli cfg <a href="https://github.com/knsv/mermaid/pull/435">#435</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>fix gantt chart cli configuration broken <a href="https://github.com/knsv/mermaid/pull/433">#433</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>fix gantt chart cli configuration parsing including functions <a href="https://github.com/knsv/mermaid/pull/430">#430</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>Uses an empty text node instead of a string for svg group labels <a href="https://github.com/knsv/mermaid/pull/429">#429</a> (<a href="https://github.com/daveaglick">daveaglick</a>)</li>
+<li>use tspan via d3.textwrap to place actor text in sequence diagram <a href="https://github.com/knsv/mermaid/pull/427">#427</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>#422 use foreignObject/div to place actor label in sequence diagram  <a href="https://github.com/knsv/mermaid/pull/423">#423</a> (<a href="https://github.com/whyzdev">whyzdev</a>)</li>
+<li>Clarify the need for a CSS stylesheet <a href="https://github.com/knsv/mermaid/pull/413">#413</a> (<a href="https://github.com/sifb">sifb</a>)</li>
+<li>Added hads downstream project <a href="https://github.com/knsv/mermaid/pull/412">#412</a> (<a href="https://github.com/sinedied">sinedied</a>)</li>
+<li>update usage and fix #273 <a href="https://github.com/knsv/mermaid/pull/406">#406</a> (<a href="https://github.com/jinntrance">jinntrance</a>)</li>
+<li>Add https://github.com/raghur/mermaid-filter to downstream projects docs page <a href="https://github.com/knsv/mermaid/pull/404">#404</a> (<a href="https://github.com/raghur">raghur</a>)</li>
+<li>New neutral theme <a href="https://github.com/knsv/mermaid/pull/395">#395</a> (<a href="https://github.com/sinedied">sinedied</a>)</li>
+<li>fix cli issues <a href="https://github.com/knsv/mermaid/pull/390">#390</a> (<a href="https://github.com/ben-page">ben-page</a>)</li>
+<li>Add missing space for 'Labels out of bounds' section <a href="https://github.com/knsv/mermaid/pull/386">#386</a> (<a href="https://github.com/The-Alchemist">The-Alchemist</a>)</li>
+<li>Fix typo: <code>pats</code> -&gt; <code>paths</code> <a href="https://github.com/knsv/mermaid/pull/382">#382</a> (<a href="https://github.com/swhgoon">swhgoon</a>)</li>
+<li>Added class diagram example to README.md <a href="https://github.com/knsv/mermaid/pull/379">#379</a> (<a href="https://github.com/HustLion">HustLion</a>)</li>
+<li>override normal flowchart arrowhead to allow css styling <a href="https://github.com/knsv/mermaid/pull/376">#376</a> (<a href="https://github.com/dodoinblue">dodoinblue</a>)</li>
+<li>added sphinx extension <a href="https://github.com/knsv/mermaid/pull/371">#371</a> (<a href="https://github.com/mgaitan">mgaitan</a>)</li>
+<li>Fix typo in the sequence diagram documentation <a href="https://github.com/knsv/mermaid/pull/369">#369</a> (<a href="https://github.com/ggpasqualino">ggpasqualino</a>)</li>
+</ul>
+<h2 id="600-2016-05-29"><a class="header" href="#600-2016-05-29"><a href="https://github.com/knsv/mermaid/tree/6.0.0">6.0.0</a> (2016-05-29)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.8...6.0.0">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Docs css: code hard to read <a href="https://github.com/knsv/mermaid/issues/324">#324</a></li>
+<li>About Markpad integration <a href="https://github.com/knsv/mermaid/issues/323">#323</a></li>
+<li>How to link backwards in flowchart? <a href="https://github.com/knsv/mermaid/issues/321">#321</a></li>
+<li>Help with editor <a href="https://github.com/knsv/mermaid/issues/310">#310</a></li>
+<li>+1 <a href="https://github.com/knsv/mermaid/issues/293">#293</a></li>
+<li>Basic chart does not render on Chome, but does in Firefox <a href="https://github.com/knsv/mermaid/issues/290">#290</a></li>
+<li>Live editor is broken <a href="https://github.com/knsv/mermaid/issues/285">#285</a></li>
+<li>&quot;No such file or directory&quot; trying to run mermaid 0.5.7 on OS X <a href="https://github.com/knsv/mermaid/issues/284">#284</a></li>
+<li>participant name as &quot;Long Long Name&quot; <a href="https://github.com/knsv/mermaid/issues/283">#283</a></li>
+<li>Windows - cli - could not find phantomjs at the specified path <a href="https://github.com/knsv/mermaid/issues/236">#236</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>The option of gantt for the spaces for the section names. <a href="https://github.com/knsv/mermaid/pull/353">#353</a> (<a href="https://github.com/zeroyonichihachi">zeroyonichihachi</a>)</li>
+<li>Gitgraph: Make reset work with parent ref carets <a href="https://github.com/knsv/mermaid/pull/350">#350</a> (<a href="https://github.com/raghur">raghur</a>)</li>
+<li>Remove the text-shadows that make the text look blurry <a href="https://github.com/knsv/mermaid/pull/349">#349</a> (<a href="https://github.com/AsaAyers">AsaAyers</a>)</li>
+<li>add line interpolation to linkStyle in flowchart <a href="https://github.com/knsv/mermaid/pull/346">#346</a> (<a href="https://github.com/AlanHohn">AlanHohn</a>)</li>
+<li>Support git graph diagrams in mermaid <a href="https://github.com/knsv/mermaid/pull/344">#344</a> (<a href="https://github.com/raghur">raghur</a>)</li>
+<li>Build and test execution changes <a href="https://github.com/knsv/mermaid/pull/338">#338</a> (<a href="https://github.com/ssbarnea">ssbarnea</a>)</li>
+<li>Reformatting of css files <a href="https://github.com/knsv/mermaid/pull/331">#331</a> (<a href="https://github.com/Jmuccigr">Jmuccigr</a>)</li>
+<li>(WIP) Sequence Diagram Title Support <a href="https://github.com/knsv/mermaid/pull/320">#320</a> (<a href="https://github.com/bronsoja">bronsoja</a>)</li>
+<li>activations doc + few fixes <a href="https://github.com/knsv/mermaid/pull/318">#318</a> (<a href="https://github.com/ciekawy">ciekawy</a>)</li>
+<li>Dark theme for better contrast on darker backgrounds <a href="https://github.com/knsv/mermaid/pull/317">#317</a> (<a href="https://github.com/crodriguez1a">crodriguez1a</a>)</li>
+<li>Activations <a href="https://github.com/knsv/mermaid/pull/316">#316</a> (<a href="https://github.com/ciekawy">ciekawy</a>)</li>
+<li>Support leading comments for sequenceDiagrams <a href="https://github.com/knsv/mermaid/pull/312">#312</a> (<a href="https://github.com/ashsearle">ashsearle</a>)</li>
+<li>Show a little lenience for white-space around names <a href="https://github.com/knsv/mermaid/pull/309">#309</a> (<a href="https://github.com/ashsearle">ashsearle</a>)</li>
+<li>Update list of downstream projects <a href="https://github.com/knsv/mermaid/pull/307">#307</a> (<a href="https://github.com/maxArturo">maxArturo</a>)</li>
+<li>Issue 299: Sequence diagram Loops: changing boxMargin spoils the &quot;loop&quot; notation <a href="https://github.com/knsv/mermaid/pull/300">#300</a> (<a href="https://github.com/LarryKlugerDS">LarryKlugerDS</a>)</li>
+<li>Issue 297 - src/mermaid.js generates bad code <a href="https://github.com/knsv/mermaid/pull/298">#298</a> (<a href="https://github.com/LarryKlugerDS">LarryKlugerDS</a>)</li>
+<li>Updated instructions for running tests <a href="https://github.com/knsv/mermaid/pull/295">#295</a> (<a href="https://github.com/LarryKlugerDS">LarryKlugerDS</a>)</li>
+<li>Add Markdown Plus to Downstream projects <a href="https://github.com/knsv/mermaid/pull/288">#288</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+<li>Quote phantomPath so that it doesn't fail on window <a href="https://github.com/knsv/mermaid/pull/286">#286</a> (<a href="https://github.com/raghur">raghur</a>)</li>
+</ul>
+<h2 id="058-2016-01-27"><a class="header" href="#058-2016-01-27"><a href="https://github.com/knsv/mermaid/tree/0.5.8">0.5.8</a> (2016-01-27)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.7...0.5.8">Full Changelog</a></p>
+<h2 id="057-2016-01-25"><a class="header" href="#057-2016-01-25"><a href="https://github.com/knsv/mermaid/tree/0.5.7">0.5.7</a> (2016-01-25)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.6...0.5.7">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Mermaid + LightPaper = ❤️ <a href="https://github.com/knsv/mermaid/issues/280">#280</a></li>
+<li>Bower Integration <a href="https://github.com/knsv/mermaid/issues/278">#278</a></li>
+<li>Mermaid breaks when variables end in 'v' <a href="https://github.com/knsv/mermaid/issues/276">#276</a></li>
+<li>sequence diagrams don't support participant aliasing <a href="https://github.com/knsv/mermaid/issues/263">#263</a></li>
+<li>One diagram that fails to render stops further execution on the page <a href="https://github.com/knsv/mermaid/issues/259">#259</a></li>
+<li>Where to find line layout algorithm? <a href="https://github.com/knsv/mermaid/issues/258">#258</a></li>
+<li>Compatibility with node.js <a href="https://github.com/knsv/mermaid/issues/257">#257</a></li>
+<li>Label resizing with dynamically loaded fonts <a href="https://github.com/knsv/mermaid/issues/255">#255</a></li>
+<li>SVG arrowheads are broken in the CLI <a href="https://github.com/knsv/mermaid/issues/249">#249</a></li>
+<li>Cannot read property 'replace' of undefined <a href="https://github.com/knsv/mermaid/issues/239">#239</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>gh-50 Allow styling of edge labels in css <a href="https://github.com/knsv/mermaid/pull/267">#267</a> (<a href="https://github.com/Anoia">Anoia</a>)</li>
+<li>Allow sequenceDiagram participant aliasing <a href="https://github.com/knsv/mermaid/pull/265">#265</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+</ul>
+<h2 id="056-2015-11-22"><a class="header" href="#056-2015-11-22"><a href="https://github.com/knsv/mermaid/tree/0.5.6">0.5.6</a> (2015-11-22)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.5...0.5.6">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Add download SVG link to the live editor <a href="https://github.com/knsv/mermaid/issues/144">#144</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Live Editor: Permalink address not being parsed <a href="https://github.com/knsv/mermaid/issues/202">#202</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>title doesn't work in sequenceDiagram <a href="https://github.com/knsv/mermaid/issues/248">#248</a></li>
+<li>hypen-minus should be valid in sequence diagram alt/else/etc. descriptions <a href="https://github.com/knsv/mermaid/issues/247">#247</a></li>
+<li>Broken in firefox? <a href="https://github.com/knsv/mermaid/issues/245">#245</a></li>
+<li>When there is a Chinese symbol in the flowchart, it will crash。 <a href="https://github.com/knsv/mermaid/issues/238">#238</a></li>
+<li>Non-alpha characters included in ALPHA token (flow graph jison) <a href="https://github.com/knsv/mermaid/issues/232">#232</a></li>
+<li>subgraph not rendering with change to sample <a href="https://github.com/knsv/mermaid/issues/231">#231</a></li>
+<li>sequence diagram requires a new line at the end? <a href="https://github.com/knsv/mermaid/issues/229">#229</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Make sequenceDiagram terminal newline optional <a href="https://github.com/knsv/mermaid/pull/253">#253</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+<li>Support sequenceDiagram &quot;over&quot; notes <a href="https://github.com/knsv/mermaid/pull/252">#252</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+<li>Properly handle &quot;rest of line&quot; statements <a href="https://github.com/knsv/mermaid/pull/251">#251</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+<li>CLI: Propagate exit code from lib (i.e., phantomjs) <a href="https://github.com/knsv/mermaid/pull/250">#250</a> (<a href="https://github.com/gibson042">gibson042</a>)</li>
+<li>flowRender.js - Fix FontAwesome icon insert <a href="https://github.com/knsv/mermaid/pull/244">#244</a> (<a href="https://github.com/ma-zal">ma-zal</a>)</li>
+<li>updated sequence diagram link in live editor <a href="https://github.com/knsv/mermaid/pull/242">#242</a> (<a href="https://github.com/r-a-v-a-s">r-a-v-a-s</a>)</li>
+<li>updated links in README.md <a href="https://github.com/knsv/mermaid/pull/240">#240</a> (<a href="https://github.com/r-a-v-a-s">r-a-v-a-s</a>)</li>
+<li>Ellipse syntax <a href="https://github.com/knsv/mermaid/pull/237">#237</a> (<a href="https://github.com/spect88">spect88</a>)</li>
+<li>Allow keywords as suffixes of node ids <a href="https://github.com/knsv/mermaid/pull/235">#235</a> (<a href="https://github.com/spect88">spect88</a>)</li>
+<li>Highlighted the editor in the nav <a href="https://github.com/knsv/mermaid/pull/234">#234</a> (<a href="https://github.com/knsv">knsv</a>)</li>
+<li>Live editor tweaks <a href="https://github.com/knsv/mermaid/pull/233">#233</a> (<a href="https://github.com/spect88">spect88</a>)</li>
+<li>Add a Gitter chat badge to README.md <a href="https://github.com/knsv/mermaid/pull/230">#230</a> (<a href="https://github.com/gitter-badger">gitter-badger</a>)</li>
+</ul>
+<h2 id="055-2015-10-21"><a class="header" href="#055-2015-10-21"><a href="https://github.com/knsv/mermaid/tree/0.5.5">0.5.5</a> (2015-10-21)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.4...0.5.5">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>sequence diagram, arrowhead instead of crosshead <a href="https://github.com/knsv/mermaid/issues/227">#227</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Fix a typo: crosshead --&gt; arrowhead <a href="https://github.com/knsv/mermaid/pull/228">#228</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+</ul>
+<h2 id="054-2015-10-19"><a class="header" href="#054-2015-10-19"><a href="https://github.com/knsv/mermaid/tree/0.5.4">0.5.4</a> (2015-10-19)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.3...0.5.4">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Set log level from mermaid configuration <a href="https://github.com/knsv/mermaid/issues/220">#220</a></li>
+<li>Links in sequence diagrams <a href="https://github.com/knsv/mermaid/issues/159">#159</a></li>
+<li>Add syntax for double headed arrows <a href="https://github.com/knsv/mermaid/issues/123">#123</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>comment characters <code>%%</code> cause parse error <a href="https://github.com/knsv/mermaid/issues/141">#141</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Marker-end arrow cannot be shown for URL with query parameter <a href="https://github.com/knsv/mermaid/issues/225">#225</a></li>
+<li>Please update bower's D3 version <a href="https://github.com/knsv/mermaid/issues/221">#221</a></li>
+<li>Width fixed to 400px <a href="https://github.com/knsv/mermaid/issues/204">#204</a></li>
+<li>render to png from the cli does not display the marker-end arrow heads <a href="https://github.com/knsv/mermaid/issues/181">#181</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Allow <code>end</code> as a substring of vertex id <a href="https://github.com/knsv/mermaid/pull/224">#224</a> (<a href="https://github.com/spect88">spect88</a>)</li>
+<li>Remove duplicate npm dependencies: d3 and he <a href="https://github.com/knsv/mermaid/pull/223">#223</a> (<a href="https://github.com/spect88">spect88</a>)</li>
+</ul>
+<h2 id="053-2015-10-04"><a class="header" href="#053-2015-10-04"><a href="https://github.com/knsv/mermaid/tree/0.5.3">0.5.3</a> (2015-10-04)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.2...0.5.3">Full Changelog</a></p>
+<h2 id="052-2015-10-04"><a class="header" href="#052-2015-10-04"><a href="https://github.com/knsv/mermaid/tree/0.5.2">0.5.2</a> (2015-10-04)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.1...0.5.2">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Support for hyperlink and tooltip <a href="https://github.com/knsv/mermaid/issues/34">#34</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Installing “atom-mermaid@0.1.3” failed <a href="https://github.com/knsv/mermaid/issues/218">#218</a></li>
+<li>node feature request <a href="https://github.com/knsv/mermaid/issues/211">#211</a></li>
+<li>Please add prefix for styles <a href="https://github.com/knsv/mermaid/issues/208">#208</a></li>
+<li>Bad handling of block arguments <a href="https://github.com/knsv/mermaid/issues/207">#207</a></li>
+<li>please consider port to mac osx  <a href="https://github.com/knsv/mermaid/issues/203">#203</a></li>
+<li>allow phantomjs &gt;=1.9.x <a href="https://github.com/knsv/mermaid/issues/201">#201</a></li>
+<li>syntax for venn diagrams? <a href="https://github.com/knsv/mermaid/issues/200">#200</a></li>
+<li>Broken CLI Graphs? (v0.5.1) <a href="https://github.com/knsv/mermaid/issues/196">#196</a></li>
+<li>Static site does not render under HTTPS <a href="https://github.com/knsv/mermaid/issues/194">#194</a></li>
+<li>Error on simple graph <a href="https://github.com/knsv/mermaid/issues/192">#192</a></li>
+<li>Escape &quot;~&quot; <a href="https://github.com/knsv/mermaid/issues/191">#191</a></li>
+<li>Trying to add link using 'click' to flowchart <a href="https://github.com/knsv/mermaid/issues/188">#188</a></li>
+<li>cli: no lines and arrowheads rendered / only dotted lines <a href="https://github.com/knsv/mermaid/issues/187">#187</a></li>
+<li>text of mermaid div displayed on page <a href="https://github.com/knsv/mermaid/issues/186">#186</a></li>
+<li>using mermaid with laravel <a href="https://github.com/knsv/mermaid/issues/185">#185</a></li>
+<li>Atom editor package <a href="https://github.com/knsv/mermaid/issues/183">#183</a></li>
+<li>Auto linewrap for notes in sequence diagrams <a href="https://github.com/knsv/mermaid/issues/178">#178</a></li>
+<li>Execute code after initialize <a href="https://github.com/knsv/mermaid/issues/176">#176</a></li>
+<li>Autoscaling for all diagram types <a href="https://github.com/knsv/mermaid/issues/175">#175</a></li>
+<li>Problem wit click event callback <a href="https://github.com/knsv/mermaid/issues/174">#174</a></li>
+<li>How to escape characters? <a href="https://github.com/knsv/mermaid/issues/170">#170</a></li>
+<li>it can not work <a href="https://github.com/knsv/mermaid/issues/167">#167</a></li>
+<li>Broken subgraph using the CLI <a href="https://github.com/knsv/mermaid/issues/153">#153</a></li>
+<li>IE Support issue <a href="https://github.com/knsv/mermaid/issues/142">#142</a></li>
+<li>Flowchart truncated <a href="https://github.com/knsv/mermaid/issues/140">#140</a></li>
+<li>Double Quote as text is not working <a href="https://github.com/knsv/mermaid/issues/219">#219</a></li>
+<li>classDef / class not working with htmlLabels? <a href="https://github.com/knsv/mermaid/issues/210">#210</a></li>
+<li>Links in graph missing <a href="https://github.com/knsv/mermaid/issues/209">#209</a></li>
+<li>Last word in comment boxes getting cut off by word wrap library : ( <a href="https://github.com/knsv/mermaid/issues/195">#195</a></li>
+<li>Escaping characters in sequence diagram <a href="https://github.com/knsv/mermaid/issues/193">#193</a></li>
+<li>SVG foreignObject rendering <a href="https://github.com/knsv/mermaid/issues/180">#180</a></li>
+<li>IE9 issue  <a href="https://github.com/knsv/mermaid/issues/179">#179</a></li>
+<li>inoperable in an AMD/requirejs environment: IPython Notebook <a href="https://github.com/knsv/mermaid/issues/127">#127</a></li>
+<li>[Parser] Hyphen in participant name bring TypeError <a href="https://github.com/knsv/mermaid/issues/74">#74</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Update flowchart.md <a href="https://github.com/knsv/mermaid/pull/214">#214</a> (<a href="https://github.com/orschiro">orschiro</a>)</li>
+<li>Default style when using the CLI <a href="https://github.com/knsv/mermaid/pull/205">#205</a> (<a href="https://github.com/gillesdemey">gillesdemey</a>)</li>
+<li>Gantt chart - add minutes and seconds durations <a href="https://github.com/knsv/mermaid/pull/198">#198</a> (<a href="https://github.com/dbrans">dbrans</a>)</li>
+<li>Using QUnit for AMD testing <a href="https://github.com/knsv/mermaid/pull/190">#190</a> (<a href="https://github.com/bollwyvl">bollwyvl</a>)</li>
+<li>Update phantomscript.js <a href="https://github.com/knsv/mermaid/pull/182">#182</a> (<a href="https://github.com/phairow">phairow</a>)</li>
+</ul>
+<h2 id="051-2015-06-21"><a class="header" href="#051-2015-06-21"><a href="https://github.com/knsv/mermaid/tree/0.5.1">0.5.1</a> (2015-06-21)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.5.0...0.5.1">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>To SVG Export <a href="https://github.com/knsv/mermaid/issues/146">#146</a></li>
+<li>Possibility to set the width of the generated flowchart <a href="https://github.com/knsv/mermaid/issues/129">#129</a></li>
+<li>Special characters break parsing <a href="https://github.com/knsv/mermaid/issues/54">#54</a></li>
+<li>Responsive graph layout for mobile viewers <a href="https://github.com/knsv/mermaid/issues/51">#51</a></li>
+<li>Styling connector lines <a href="https://github.com/knsv/mermaid/issues/31">#31</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>flowchart - styling of edges via css overrides specific styles set in the graph definition <a href="https://github.com/knsv/mermaid/issues/128">#128</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Live editor is broken <a href="https://github.com/knsv/mermaid/issues/173">#173</a></li>
+<li>0.5.0 no longer respects custom date definitions in Gantt diagrams <a href="https://github.com/knsv/mermaid/issues/171">#171</a></li>
+<li>Drop label character restrictions <a href="https://github.com/knsv/mermaid/issues/162">#162</a></li>
+<li>can't nest subgraphs in flowchart <a href="https://github.com/knsv/mermaid/issues/161">#161</a></li>
+<li>Unable to generate gantt diagram with mermaid CLI <a href="https://github.com/knsv/mermaid/issues/158">#158</a></li>
+<li>Inline css by &quot;mermaid&quot; <a href="https://github.com/knsv/mermaid/issues/157">#157</a></li>
+<li>Finite State Machine Diagram <a href="https://github.com/knsv/mermaid/issues/152">#152</a></li>
+<li>How to center align gantt diagram <a href="https://github.com/knsv/mermaid/issues/150">#150</a></li>
+<li>Security concern regarding class definition <a href="https://github.com/knsv/mermaid/issues/148">#148</a></li>
+<li>File Extension <a href="https://github.com/knsv/mermaid/issues/147">#147</a></li>
+<li><code>setTimeout</code> with clusters problematic with programmatic edits and no callback <a href="https://github.com/knsv/mermaid/issues/133">#133</a></li>
+<li>module.exports.cloneCssStyles() in combination with Angularjs breaks display in Chrome and IE <a href="https://github.com/knsv/mermaid/issues/126">#126</a></li>
+<li>Gantt - suitable xAxis for longer project <a href="https://github.com/knsv/mermaid/issues/125">#125</a></li>
+<li>How to get started with this project ? <a href="https://github.com/knsv/mermaid/issues/64">#64</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Remove moot <code>version</code> property from bower.json <a href="https://github.com/knsv/mermaid/pull/172">#172</a> (<a href="https://github.com/kkirsche">kkirsche</a>)</li>
+</ul>
+<h2 id="050-2015-06-07"><a class="header" href="#050-2015-06-07"><a href="https://github.com/knsv/mermaid/tree/0.5.0">0.5.0</a> (2015-06-07)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.4.0...0.5.0">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Add a css file, mermaid.css, with default styling <a href="https://github.com/knsv/mermaid/issues/122">#122</a></li>
+<li>software architecture diagram <a href="https://github.com/knsv/mermaid/issues/36">#36</a></li>
+<li>Support for bar charts and pie diagrams <a href="https://github.com/knsv/mermaid/issues/22">#22</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>uglifyjs wanrings which means we can improve the code <a href="https://github.com/knsv/mermaid/issues/156">#156</a></li>
+<li>New(er) features unavailable in downloadable js files? <a href="https://github.com/knsv/mermaid/issues/151">#151</a></li>
+<li>Add gh-gapes link to description <a href="https://github.com/knsv/mermaid/issues/143">#143</a></li>
+<li>Some examples not displayed on Firefox 36.0.1 <a href="https://github.com/knsv/mermaid/issues/138">#138</a></li>
+<li>tags ending in a &quot;v&quot; don't render <a href="https://github.com/knsv/mermaid/issues/132">#132</a></li>
+<li>Links in flowchart <a href="https://github.com/knsv/mermaid/issues/131">#131</a></li>
+<li>Using the library for iOS development <a href="https://github.com/knsv/mermaid/issues/130">#130</a></li>
+<li>Add capability for gantt diagrams <a href="https://github.com/knsv/mermaid/issues/118">#118</a></li>
+<li>lower case v causes error in the parser <a href="https://github.com/knsv/mermaid/issues/108">#108</a></li>
+<li>Label's css conflict with boostrap's .label <a href="https://github.com/knsv/mermaid/issues/67">#67</a></li>
+<li>TypeError: Cannot read property 'layout' of undefined <a href="https://github.com/knsv/mermaid/issues/37">#37</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Dev 0.5.0 <a href="https://github.com/knsv/mermaid/pull/168">#168</a> (<a href="https://github.com/knsv">knsv</a>)</li>
+<li>Fix spacing <a href="https://github.com/knsv/mermaid/pull/164">#164</a> (<a href="https://github.com/rhcarvalho">rhcarvalho</a>)</li>
+<li>Fixing typo: &quot;Think&quot; -&gt; &quot;Thick&quot; <a href="https://github.com/knsv/mermaid/pull/160">#160</a> (<a href="https://github.com/it0a">it0a</a>)</li>
+<li>IE, local html, cssRules access is denied <a href="https://github.com/knsv/mermaid/pull/155">#155</a> (<a href="https://github.com/tylerlong">tylerlong</a>)</li>
+<li>Add automatically generated change log file. <a href="https://github.com/knsv/mermaid/pull/139">#139</a> (<a href="https://github.com/skywinder">skywinder</a>)</li>
+<li>Adding init argument to the global API <a href="https://github.com/knsv/mermaid/pull/137">#137</a> (<a href="https://github.com/bollwyvl">bollwyvl</a>)</li>
+<li>Add description of manual calling of init <a href="https://github.com/knsv/mermaid/pull/136">#136</a> (<a href="https://github.com/bollwyvl">bollwyvl</a>)</li>
+<li>Allow other forms of node selection for init() <a href="https://github.com/knsv/mermaid/pull/135">#135</a> (<a href="https://github.com/bollwyvl">bollwyvl</a>)</li>
+<li>Use a library-level variable for assigning ids <a href="https://github.com/knsv/mermaid/pull/134">#134</a> (<a href="https://github.com/bollwyvl">bollwyvl</a>)</li>
+</ul>
+<h2 id="040-2015-03-01"><a class="header" href="#040-2015-03-01"><a href="https://github.com/knsv/mermaid/tree/0.4.0">0.4.0</a> (2015-03-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.5...0.4.0">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Assymetric shapes not documented <a href="https://github.com/knsv/mermaid/issues/82">#82</a></li>
+<li>Improve arrows <a href="https://github.com/knsv/mermaid/issues/3">#3</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>NoModificationAllowedError <a href="https://github.com/knsv/mermaid/issues/23">#23</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>subgraph background is black in rendered flowchart PNG via CLI <a href="https://github.com/knsv/mermaid/issues/121">#121</a></li>
+<li>Integrate editor at https://github.com/naseer/mermaid-webapp <a href="https://github.com/knsv/mermaid/issues/110">#110</a></li>
+<li>Internet Explorer Support <a href="https://github.com/knsv/mermaid/issues/99">#99</a></li>
+</ul>
+<h2 id="035-2015-02-15"><a class="header" href="#035-2015-02-15"><a href="https://github.com/knsv/mermaid/tree/0.3.5">0.3.5</a> (2015-02-15)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.4...0.3.5">Full Changelog</a></p>
+<h2 id="034-2015-02-15"><a class="header" href="#034-2015-02-15"><a href="https://github.com/knsv/mermaid/tree/0.3.4">0.3.4</a> (2015-02-15)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.3...0.3.4">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Apply styling from css when using the CLI utility <a href="https://github.com/knsv/mermaid/issues/85">#85</a></li>
+<li>Generated SVG works poorly outside web browsers <a href="https://github.com/knsv/mermaid/issues/58">#58</a></li>
+<li>Generating SVG text blob for use in Node <a href="https://github.com/knsv/mermaid/issues/2">#2</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Subgraph syntax bug? <a href="https://github.com/knsv/mermaid/issues/120">#120</a></li>
+<li>Live editor <a href="https://github.com/knsv/mermaid/issues/115">#115</a></li>
+<li>Error in &quot;Basic Syntax&quot; wiki page <a href="https://github.com/knsv/mermaid/issues/113">#113</a></li>
+<li>semicolons, anyone? <a href="https://github.com/knsv/mermaid/issues/111">#111</a></li>
+<li>undefined <code>sequenceConfig</code> fails <a href="https://github.com/knsv/mermaid/issues/109">#109</a></li>
+<li>Sequence Diagrams: Show Actors below as well <a href="https://github.com/knsv/mermaid/issues/106">#106</a></li>
+<li>Allow overriding sequence diagram configuration (SVG properties) <a href="https://github.com/knsv/mermaid/issues/103">#103</a></li>
+<li>Error when rendering A-- This is the text -- B <a href="https://github.com/knsv/mermaid/issues/102">#102</a></li>
+<li>Clipping in documentation <a href="https://github.com/knsv/mermaid/issues/97">#97</a></li>
+<li>isolate class styling to the svg container <a href="https://github.com/knsv/mermaid/issues/92">#92</a></li>
+<li>Make the new graph declaration more visual <a href="https://github.com/knsv/mermaid/issues/40">#40</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Add live editor <a href="https://github.com/knsv/mermaid/pull/119">#119</a> (<a href="https://github.com/naseer">naseer</a>)</li>
+<li>Adds CSS option to the CLI <a href="https://github.com/knsv/mermaid/pull/116">#116</a> (<a href="https://github.com/fardog">fardog</a>)</li>
+<li>Update flowchart.md in response Issue #113 <a href="https://github.com/knsv/mermaid/pull/114">#114</a> (<a href="https://github.com/vijay40">vijay40</a>)</li>
+<li>Ignore all files except the license and dist/ folder when installing with Bower. <a href="https://github.com/knsv/mermaid/pull/112">#112</a> (<a href="https://github.com/jasonbellamy">jasonbellamy</a>)</li>
+</ul>
+<h2 id="033-2015-01-25"><a class="header" href="#033-2015-01-25"><a href="https://github.com/knsv/mermaid/tree/0.3.3">0.3.3</a> (2015-01-25)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.2...0.3.3">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Support for dotted links <a href="https://github.com/knsv/mermaid/issues/26">#26</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Missing arrows in sequence diagram <a href="https://github.com/knsv/mermaid/issues/98">#98</a></li>
+<li>Error with &gt;9 linkStyles <a href="https://github.com/knsv/mermaid/issues/95">#95</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Require d3 directly to better support Node usage <a href="https://github.com/knsv/mermaid/pull/107">#107</a> (<a href="https://github.com/markdalgleish">markdalgleish</a>)</li>
+<li>update doc with -c option <a href="https://github.com/knsv/mermaid/pull/105">#105</a> (<a href="https://github.com/jjmr">jjmr</a>)</li>
+<li>Add new parameter to the console client to override the svg configuration in sequence diagrams <a href="https://github.com/knsv/mermaid/pull/104">#104</a> (<a href="https://github.com/jjmr">jjmr</a>)</li>
+<li>Text based labels, new shape <a href="https://github.com/knsv/mermaid/pull/101">#101</a> (<a href="https://github.com/bjowes">bjowes</a>)</li>
+<li>fix html tags in example usage <a href="https://github.com/knsv/mermaid/pull/100">#100</a> (<a href="https://github.com/deiwin">deiwin</a>)</li>
+</ul>
+<h2 id="032-2015-01-11"><a class="header" href="#032-2015-01-11"><a href="https://github.com/knsv/mermaid/tree/0.3.2">0.3.2</a> (2015-01-11)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.1...0.3.2">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Make link text look like it is on the line <a href="https://github.com/knsv/mermaid/issues/53">#53</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>disable auto render <a href="https://github.com/knsv/mermaid/issues/91">#91</a></li>
+<li>Tidy breaks mermaid (linebreaks in &lt;div&gt;) <a href="https://github.com/knsv/mermaid/issues/87">#87</a></li>
+<li>Bug: &lt;br&gt; being rendered as text in node <a href="https://github.com/knsv/mermaid/issues/73">#73</a></li>
+<li>Graph edges appear to render outside of the canvas <a href="https://github.com/knsv/mermaid/issues/70">#70</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Merge pull request #1 from knsv/master <a href="https://github.com/knsv/mermaid/pull/96">#96</a> (<a href="https://github.com/gkchic">gkchic</a>)</li>
+<li>Removed duplicated section in flowchart docs <a href="https://github.com/knsv/mermaid/pull/94">#94</a> (<a href="https://github.com/kaime">kaime</a>)</li>
+<li>Grammar changes to sequence page <a href="https://github.com/knsv/mermaid/pull/93">#93</a> (<a href="https://github.com/gkchic">gkchic</a>)</li>
+<li>Github buttons <a href="https://github.com/knsv/mermaid/pull/89">#89</a> (<a href="https://github.com/gkchic">gkchic</a>)</li>
+<li>Template change <a href="https://github.com/knsv/mermaid/pull/88">#88</a> (<a href="https://github.com/gkchic">gkchic</a>)</li>
+</ul>
+<h2 id="031-2015-01-05"><a class="header" href="#031-2015-01-05"><a href="https://github.com/knsv/mermaid/tree/0.3.1">0.3.1</a> (2015-01-05)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.3.0...0.3.1">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Support for sequence diagrams <a href="https://github.com/knsv/mermaid/issues/16">#16</a></li>
+<li>Client utility for mermaid <a href="https://github.com/knsv/mermaid/issues/6">#6</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Non ASCII chars in labels <a href="https://github.com/knsv/mermaid/issues/84">#84</a></li>
+<li>'undefined' titles of Quicklinks on the usage page <a href="https://github.com/knsv/mermaid/issues/80">#80</a></li>
+<li>[cli] Enhancement proposal: not fail --version / --help if phantomjs isn't installed <a href="https://github.com/knsv/mermaid/issues/71">#71</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Flowchart doc: Text in the circle now in a circle <a href="https://github.com/knsv/mermaid/pull/81">#81</a> (<a href="https://github.com/Grahack">Grahack</a>)</li>
+<li>Fix for issue #73 <a href="https://github.com/knsv/mermaid/pull/79">#79</a> (<a href="https://github.com/it0a">it0a</a>)</li>
+<li>Ink template <a href="https://github.com/knsv/mermaid/pull/78">#78</a> (<a href="https://github.com/gkchic">gkchic</a>)</li>
+<li>Show help and version even if phantom isn't present. Fixes #71 <a href="https://github.com/knsv/mermaid/pull/75">#75</a> (<a href="https://github.com/fardog">fardog</a>)</li>
+<li>Add apostrophe &amp; 'and' <a href="https://github.com/knsv/mermaid/pull/72">#72</a> (<a href="https://github.com/sudodoki">sudodoki</a>)</li>
+</ul>
+<h2 id="030-2014-12-22"><a class="header" href="#030-2014-12-22"><a href="https://github.com/knsv/mermaid/tree/0.3.0">0.3.0</a> (2014-12-22)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.16...0.3.0">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>How do I do comments? <a href="https://github.com/knsv/mermaid/issues/47">#47</a></li>
+<li>Improve readability with new line as terminator and whitespace <a href="https://github.com/knsv/mermaid/issues/38">#38</a></li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>This characters failed the lexical parsing <a href="https://github.com/knsv/mermaid/issues/46">#46</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Trailing whitespace at the end of lines is not ignored <a href="https://github.com/knsv/mermaid/issues/55">#55</a></li>
+<li>Use classes instead of inline style for easy styling <a href="https://github.com/knsv/mermaid/issues/24">#24</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Adds Command Line Interface for generating PNGs from mermaid description files <a href="https://github.com/knsv/mermaid/pull/69">#69</a> (<a href="https://github.com/fardog">fardog</a>)</li>
+<li>Allow special symbols for direction along with acronyms <a href="https://github.com/knsv/mermaid/pull/66">#66</a> (<a href="https://github.com/vijay40">vijay40</a>)</li>
+</ul>
+<h2 id="0216-2014-12-15"><a class="header" href="#0216-2014-12-15"><a href="https://github.com/knsv/mermaid/tree/0.2.16">0.2.16</a> (2014-12-15)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.15...0.2.16">Full Changelog</a></p>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Lines routed outside visible area <a href="https://github.com/knsv/mermaid/issues/19">#19</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Mermaid not rendering properly on Wordpress pages <a href="https://github.com/knsv/mermaid/issues/59">#59</a></li>
+<li>Improve example page with live demo <a href="https://github.com/knsv/mermaid/issues/52">#52</a></li>
+<li>Does not render upon AngularJS Updates <a href="https://github.com/knsv/mermaid/issues/45">#45</a></li>
+<li>Download link in README.MD doesn't work. <a href="https://github.com/knsv/mermaid/issues/42">#42</a></li>
+<li>linkStyle usage is not obvious <a href="https://github.com/knsv/mermaid/issues/41">#41</a></li>
+<li>Move *.spec.js in src/ to test/ <a href="https://github.com/knsv/mermaid/issues/35">#35</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>New grammar will allow statements ending without semicolon as disccused in Issue #38 <a href="https://github.com/knsv/mermaid/pull/63">#63</a> (<a href="https://github.com/vijay40">vijay40</a>)</li>
+<li>Class based styling <a href="https://github.com/knsv/mermaid/pull/62">#62</a> (<a href="https://github.com/bjowes">bjowes</a>)</li>
+<li>Fix typos <a href="https://github.com/knsv/mermaid/pull/60">#60</a> (<a href="https://github.com/sublimino">sublimino</a>)</li>
+<li>Included .DS_Store in gitignore <a href="https://github.com/knsv/mermaid/pull/57">#57</a> (<a href="https://github.com/alvynmcq">alvynmcq</a>)</li>
+<li>Improves readability discussed in issue #38 <a href="https://github.com/knsv/mermaid/pull/56">#56</a> (<a href="https://github.com/vijay40">vijay40</a>)</li>
+<li>Added a linting task for gulp <a href="https://github.com/knsv/mermaid/pull/43">#43</a> (<a href="https://github.com/serv">serv</a>)</li>
+</ul>
+<h2 id="0215-2014-12-05"><a class="header" href="#0215-2014-12-05"><a href="https://github.com/knsv/mermaid/tree/0.2.15">0.2.15</a> (2014-12-05)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.14...0.2.15">Full Changelog</a></p>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Error with some characters <a href="https://github.com/knsv/mermaid/issues/25">#25</a></li>
+<li>Cap-cased words break parser <a href="https://github.com/knsv/mermaid/issues/8">#8</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Question marks don't render properly with /dist/mermaid.full.min.js <a href="https://github.com/knsv/mermaid/issues/30">#30</a></li>
+<li>Provide parse function in browser widthout <code>require</code>? <a href="https://github.com/knsv/mermaid/issues/21">#21</a></li>
+<li>Better label text support <a href="https://github.com/knsv/mermaid/issues/18">#18</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Include bower_components/ to .gitignore <a href="https://github.com/knsv/mermaid/pull/33">#33</a> (<a href="https://github.com/serv">serv</a>)</li>
+<li>Fixed reference to Git repo. <a href="https://github.com/knsv/mermaid/pull/32">#32</a> (<a href="https://github.com/guyellis">guyellis</a>)</li>
+</ul>
+<h2 id="0214-2014-12-03"><a class="header" href="#0214-2014-12-03"><a href="https://github.com/knsv/mermaid/tree/0.2.14">0.2.14</a> (2014-12-03)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.13...0.2.14">Full Changelog</a></p>
+<h2 id="0213-2014-12-03"><a class="header" href="#0213-2014-12-03"><a href="https://github.com/knsv/mermaid/tree/0.2.13">0.2.13</a> (2014-12-03)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.10...0.2.13">Full Changelog</a></p>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>Publish to NPM <a href="https://github.com/knsv/mermaid/issues/7">#7</a></li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>modified init to be applied more than once <a href="https://github.com/knsv/mermaid/issues/29">#29</a></li>
+<li>Wanted to know build process for the project. <a href="https://github.com/knsv/mermaid/issues/28">#28</a></li>
+<li>can not support Chinese description <a href="https://github.com/knsv/mermaid/issues/20">#20</a></li>
+<li>Support unicode chars in labels <a href="https://github.com/knsv/mermaid/issues/9">#9</a></li>
+</ul>
+<h2 id="0210-2014-12-01"><a class="header" href="#0210-2014-12-01"><a href="https://github.com/knsv/mermaid/tree/0.2.10">0.2.10</a> (2014-12-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.9...0.2.10">Full Changelog</a></p>
+<h2 id="029-2014-12-01"><a class="header" href="#029-2014-12-01"><a href="https://github.com/knsv/mermaid/tree/0.2.9">0.2.9</a> (2014-12-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.8...0.2.9">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Add link to jsbin playground to README <a href="https://github.com/knsv/mermaid/issues/11">#11</a></li>
+<li>What are the requirements ? <a href="https://github.com/knsv/mermaid/issues/10">#10</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Allow unicode chars in labels <a href="https://github.com/knsv/mermaid/pull/13">#13</a> (<a href="https://github.com/codebeige">codebeige</a>)</li>
+</ul>
+<h2 id="028-2014-12-01"><a class="header" href="#028-2014-12-01"><a href="https://github.com/knsv/mermaid/tree/0.2.8">0.2.8</a> (2014-12-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.7...0.2.8">Full Changelog</a></p>
+<h2 id="027-2014-12-01"><a class="header" href="#027-2014-12-01"><a href="https://github.com/knsv/mermaid/tree/0.2.7">0.2.7</a> (2014-12-01)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.6...0.2.7">Full Changelog</a></p>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>Provide parser as separate module <a href="https://github.com/knsv/mermaid/issues/4">#4</a></li>
+</ul>
+<h2 id="026-2014-11-27"><a class="header" href="#026-2014-11-27"><a href="https://github.com/knsv/mermaid/tree/0.2.6">0.2.6</a> (2014-11-27)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.5...0.2.6">Full Changelog</a></p>
+<h2 id="025-2014-11-27"><a class="header" href="#025-2014-11-27"><a href="https://github.com/knsv/mermaid/tree/0.2.5">0.2.5</a> (2014-11-27)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.4...0.2.5">Full Changelog</a></p>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Added new shapes! <a href="https://github.com/knsv/mermaid/pull/1">#1</a> (<a href="https://github.com/bjowes">bjowes</a>)</li>
+</ul>
+<h2 id="024-2014-11-25"><a class="header" href="#024-2014-11-25"><a href="https://github.com/knsv/mermaid/tree/0.2.4">0.2.4</a> (2014-11-25)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.3...0.2.4">Full Changelog</a></p>
+<h2 id="023-2014-11-24"><a class="header" href="#023-2014-11-24"><a href="https://github.com/knsv/mermaid/tree/0.2.3">0.2.3</a> (2014-11-24)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.2...0.2.3">Full Changelog</a></p>
+<h2 id="022-2014-11-22"><a class="header" href="#022-2014-11-22"><a href="https://github.com/knsv/mermaid/tree/0.2.2">0.2.2</a> (2014-11-22)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.1...0.2.2">Full Changelog</a></p>
+<h2 id="021-2014-11-22"><a class="header" href="#021-2014-11-22"><a href="https://github.com/knsv/mermaid/tree/0.2.1">0.2.1</a> (2014-11-22)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.2.0...0.2.1">Full Changelog</a></p>
+<h2 id="020-2014-11-22"><a class="header" href="#020-2014-11-22"><a href="https://github.com/knsv/mermaid/tree/0.2.0">0.2.0</a> (2014-11-22)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.1.1...0.2.0">Full Changelog</a></p>
+<h2 id="011-2014-11-17"><a class="header" href="#011-2014-11-17"><a href="https://github.com/knsv/mermaid/tree/0.1.1">0.1.1</a> (2014-11-17)</a></h2>
+<p><a href="https://github.com/knsv/mermaid/compare/0.1.0...0.1.1">Full Changelog</a></p>
+<h2 id="010-2014-11-16"><a class="header" href="#010-2014-11-16"><a href="https://github.com/knsv/mermaid/tree/0.1.0">0.1.0</a> (2014-11-16)</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="development.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="newDiagram.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="development.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="newDiagram.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Flowchart - Mermaid zh-cn doc</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="explain.html">说明</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">中文</li><li class="chapter-item affix "><li class="part-title">📔 简介</li><li class="chapter-item "><a href="about_mermaid/index.html"><strong aria-hidden="true">1.</strong> 关于</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="about_mermaid/diagram_types.html"><strong aria-hidden="true">1.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="about_mermaid/install.html"><strong aria-hidden="true">1.2.</strong> 安装</a></li><li class="chapter-item "><a href="about_mermaid/sibling_projects.html"><strong aria-hidden="true">1.3.</strong> 相关项目</a></li></ol></li><li class="chapter-item "><a href="quick_start/index.html"><strong aria-hidden="true">2.</strong> 快速开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="quick_start/diagram_types.html"><strong aria-hidden="true">2.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="quick_start/four_ways.html"><strong aria-hidden="true">2.2.</strong> 4种使用方式</a></li><li class="chapter-item "><a href="quick_start/use_live_editor.html"><strong aria-hidden="true">2.3.</strong> 一在线编辑</a></li><li class="chapter-item "><a href="quick_start/use_mermaid_plugin.html"><strong aria-hidden="true">2.4.</strong> 二插件方式</a></li><li class="chapter-item "><a href="quick_start/use_js_api.html"><strong aria-hidden="true">2.5.</strong> 三使用JS API</a></li><li class="chapter-item "><a href="quick_start/use_add_dependency.html"><strong aria-hidden="true">2.6.</strong> 四添加依赖</a></li></ol></li><li class="chapter-item "><a href="syntax_reference/index.html"><strong aria-hidden="true">3.</strong> 语法和配置</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="syntax_reference/syntax_structure.html"><strong aria-hidden="true">3.1.</strong> 语法结构</a></li><li class="chapter-item "><a href="syntax_reference/mermaid_breaking.html"><strong aria-hidden="true">3.2.</strong> 特殊字符</a></li><li class="chapter-item "><a href="syntax_reference/configuration.html"><strong aria-hidden="true">3.3.</strong> 配置</a></li></ol></li><li class="chapter-item "><li class="part-title">📊 图表语法</li><li class="chapter-item "><a href="flowchart/index.html"><strong aria-hidden="true">4.</strong> 流程图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="flowchart/graph.html"><strong aria-hidden="true">4.1.</strong> 绘制</a></li><li class="chapter-item "><a href="flowchart/orientation.html"><strong aria-hidden="true">4.2.</strong> 绘制方向</a></li><li class="chapter-item "><a href="flowchart/node_shapes.html"><strong aria-hidden="true">4.3.</strong> 节点图形</a></li><li class="chapter-item "><a href="flowchart/links_between_nodes.html"><strong aria-hidden="true">4.4.</strong> 连接节点</a></li><li class="chapter-item "><a href="flowchart/special_characters.html"><strong aria-hidden="true">4.5.</strong> 破坏语法的特殊字符</a></li><li class="chapter-item "><a href="flowchart/subgraphs.html"><strong aria-hidden="true">4.6.</strong> 子图</a></li><li class="chapter-item "><a href="flowchart/beta_flowcharts.html"><strong aria-hidden="true">4.7.</strong> 测试流程图</a></li><li class="chapter-item "><a href="flowchart/direction_in_subgraphs.html"><strong aria-hidden="true">4.8.</strong> 子图绘制方向</a></li><li class="chapter-item "><a href="flowchart/interaction.html"><strong aria-hidden="true">4.9.</strong> 交互</a></li><li class="chapter-item "><a href="flowchart/styling_and_classes.html"><strong aria-hidden="true">4.10.</strong> 类样式</a></li><li class="chapter-item "><a href="flowchart/basic-support-for-fontawesome.html"><strong aria-hidden="true">4.11.</strong> 对 fontawesome 的基本支持</a></li><li class="chapter-item "><a href="flowchart/graph_declarations.html"><strong aria-hidden="true">4.12.</strong> 图形声明</a></li><li class="chapter-item "><a href="flowchart/configuration.html"><strong aria-hidden="true">4.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="sequence/index.html"><strong aria-hidden="true">5.</strong> 序列图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="sequence/syntax.html"><strong aria-hidden="true">5.1.</strong> 语法</a></li><li class="chapter-item "><a href="sequence/messages.html"><strong aria-hidden="true">5.2.</strong> 消息</a></li><li class="chapter-item "><a href="sequence/activations.html"><strong aria-hidden="true">5.3.</strong> 活跃</a></li><li class="chapter-item "><a href="sequence/notes.html"><strong aria-hidden="true">5.4.</strong> 笔记</a></li><li class="chapter-item "><a href="sequence/loops.html"><strong aria-hidden="true">5.5.</strong> 循环</a></li><li class="chapter-item "><a href="sequence/alt.html"><strong aria-hidden="true">5.6.</strong> 分支</a></li><li class="chapter-item "><a href="sequence/parallel.html"><strong aria-hidden="true">5.7.</strong> 并行</a></li><li class="chapter-item "><a href="sequence/background.html"><strong aria-hidden="true">5.8.</strong> 背景色</a></li><li class="chapter-item "><a href="sequence/comments.html"><strong aria-hidden="true">5.9.</strong> 注释</a></li><li class="chapter-item "><a href="sequence/code_to_char.html"><strong aria-hidden="true">5.10.</strong> 转义字符的实体代码</a></li><li class="chapter-item "><a href="sequence/sequence_numbers.html"><strong aria-hidden="true">5.11.</strong> 序号</a></li><li class="chapter-item "><a href="sequence/styling.html"><strong aria-hidden="true">5.12.</strong> 样式</a></li><li class="chapter-item "><a href="sequence/configuration.html"><strong aria-hidden="true">5.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="class/index.html"><strong aria-hidden="true">6.</strong> 类图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="class/syntax.html"><strong aria-hidden="true">6.1.</strong> 语法</a></li><li class="chapter-item "><a href="class/define_a_class.html"><strong aria-hidden="true">6.2.</strong> 定义类</a></li><li class="chapter-item "><a href="class/defining_members_of_a_class.html"><strong aria-hidden="true">6.3.</strong> 定义成员</a></li><li class="chapter-item "><a href="class/defining_relationship.html"><strong aria-hidden="true">6.4.</strong> 定义关系</a></li><li class="chapter-item "><a href="class/cardinality_multiplicity_on_relations.html"><strong aria-hidden="true">6.5.</strong> 多重性</a></li><li class="chapter-item "><a href="class/annotations_on_classes.html"><strong aria-hidden="true">6.6.</strong> 类的注释</a></li><li class="chapter-item "><a href="class/comments.html"><strong aria-hidden="true">6.7.</strong> 注释</a></li><li class="chapter-item "><a href="class/setting_the_direction_of_the_diagram.html"><strong aria-hidden="true">6.8.</strong> 绘图方向</a></li><li class="chapter-item "><a href="class/interaction.html"><strong aria-hidden="true">6.9.</strong> 交互</a></li><li class="chapter-item "><a href="class/styling.html"><strong aria-hidden="true">6.10.</strong> 样式</a></li><li class="chapter-item "><a href="class/configuration.html"><strong aria-hidden="true">6.11.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="state/index.html"><strong aria-hidden="true">7.</strong> 状态图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="state/states.html"><strong aria-hidden="true">7.1.</strong> 状态</a></li><li class="chapter-item "><a href="state/transitions.html"><strong aria-hidden="true">7.2.</strong> 过渡</a></li><li class="chapter-item "><a href="state/start-and-end.html"><strong aria-hidden="true">7.3.</strong> 开始和结束</a></li><li class="chapter-item "><a href="state/composite-states.html"><strong aria-hidden="true">7.4.</strong> 复合状态</a></li><li class="chapter-item "><a href="state/choice.html"><strong aria-hidden="true">7.5.</strong> 选择</a></li><li class="chapter-item "><a href="state/forks.html"><strong aria-hidden="true">7.6.</strong> 克隆</a></li><li class="chapter-item "><a href="state/notes.html"><strong aria-hidden="true">7.7.</strong> 笔记</a></li><li class="chapter-item "><a href="state/concurrency.html"><strong aria-hidden="true">7.8.</strong> 并发</a></li><li class="chapter-item "><a href="state/setting-the-direction-of-the-diagram.html"><strong aria-hidden="true">7.9.</strong> 绘制方向</a></li><li class="chapter-item "><a href="state/comments.html"><strong aria-hidden="true">7.10.</strong> 注释</a></li><li class="chapter-item "><a href="state/styling.html"><strong aria-hidden="true">7.11.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="entity_relationship/index.html"><strong aria-hidden="true">8.</strong> ER图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="entity_relationship/syntax.html"><strong aria-hidden="true">8.1.</strong> 语法</a></li><li class="chapter-item "><a href="entity_relationship/styling.html"><strong aria-hidden="true">8.2.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="user_journey.html"><strong aria-hidden="true">9.</strong> 用户旅程图</a></li><li class="chapter-item "><a href="gantt/index.html"><strong aria-hidden="true">10.</strong> 甘特图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="gantt/note.html"><strong aria-hidden="true">10.1.</strong> 笔记</a></li><li class="chapter-item "><a href="gantt/syntax.html"><strong aria-hidden="true">10.2.</strong> 语法</a></li><li class="chapter-item "><a href="gantt/setting-dates.html"><strong aria-hidden="true">10.3.</strong> 设置日期</a></li><li class="chapter-item "><a href="gantt/comments.html"><strong aria-hidden="true">10.4.</strong> 注释</a></li><li class="chapter-item "><a href="gantt/styling.html"><strong aria-hidden="true">10.5.</strong> 样式</a></li><li class="chapter-item "><a href="gantt/today-marker.html"><strong aria-hidden="true">10.6.</strong> 当日标记</a></li><li class="chapter-item "><a href="gantt/configuration.html"><strong aria-hidden="true">10.7.</strong> 配置</a></li><li class="chapter-item "><a href="gantt/interaction.html"><strong aria-hidden="true">10.8.</strong> 交互</a></li></ol></li><li class="chapter-item "><a href="pie/index.html"><strong aria-hidden="true">11.</strong> 饼图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pie/syntax.html"><strong aria-hidden="true">11.1.</strong> 语法</a></li><li class="chapter-item "><a href="pie/example.html"><strong aria-hidden="true">11.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="requirement/index.html"><strong aria-hidden="true">12.</strong> 需求图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="requirement/syntax.html"><strong aria-hidden="true">12.1.</strong> 语法</a></li><li class="chapter-item "><a href="requirement/example.html"><strong aria-hidden="true">12.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="examples/index.html"><strong aria-hidden="true">13.</strong> 其他样例</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="examples/pie.html"><strong aria-hidden="true">13.1.</strong> 基本饼图</a></li><li class="chapter-item "><a href="examples/sequence.html"><strong aria-hidden="true">13.2.</strong> 基本序列图</a></li><li class="chapter-item "><a href="examples/flowchart.html"><strong aria-hidden="true">13.3.</strong> 基本流程图</a></li><li class="chapter-item "><a href="examples/flowchart_styling.html"><strong aria-hidden="true">13.4.</strong> 流程图和样式</a></li><li class="chapter-item "><a href="examples/sequence_loop.html"><strong aria-hidden="true">13.5.</strong> 序列图:循环，分支</a></li><li class="chapter-item "><a href="examples/sequence_message.html"><strong aria-hidden="true">13.6.</strong> 序列图:自循环</a></li></ol></li><li class="chapter-item "><li class="part-title">⚙️ 部署和配置</li><li class="chapter-item "><a href="tutorials.html"><strong aria-hidden="true">14.</strong> 教程</a></li><li class="chapter-item "><a href="usage/index.html"><strong aria-hidden="true">15.</strong> API 用法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/using_mermaid.html"><strong aria-hidden="true">15.1.</strong> 使用Mermaid</a></li><li class="chapter-item "><a href="usage/simple_full_example.html"><strong aria-hidden="true">15.2.</strong> 简单样例</a></li><li class="chapter-item "><a href="usage/notes.html"><strong aria-hidden="true">15.3.</strong> 注意</a></li><li class="chapter-item "><a href="usage/enable_click_event_and_tags_in_nodes.html"><strong aria-hidden="true">15.4.</strong> 在节点中启用点击事件和标签</a></li><li class="chapter-item "><a href="usage/security_level.html"><strong aria-hidden="true">15.5.</strong> 安全级别</a></li><li class="chapter-item "><a href="usage/usage_with_webpack.html"><strong aria-hidden="true">15.6.</strong> 与webpack使用</a></li><li class="chapter-item "><a href="usage/api_usage.html"><strong aria-hidden="true">15.7.</strong> api用法</a></li><li class="chapter-item "><a href="usage/example_of_a_marked_renderer.html"><strong aria-hidden="true">15.8.</strong> 于marked使用样例</a></li><li class="chapter-item "><a href="usage/advanced_usage.html"><strong aria-hidden="true">15.9.</strong> 高级用法</a></li><li class="chapter-item "><a href="usage/configuration.html"><strong aria-hidden="true">15.10.</strong> 配置</a></li><li class="chapter-item "><a href="usage/using_the_initialize_call.html"><strong aria-hidden="true">15.11.</strong> 调用initialize</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_object.html"><strong aria-hidden="true">15.12.</strong> 使用mermaid对象</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_config.html"><strong aria-hidden="true">15.13.</strong> 使用mermaid配置</a></li><li class="chapter-item "><a href="usage/using_the_mermaidinit_call.html"><strong aria-hidden="true">15.14.</strong> 调用mermaid.init</a></li></ol></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">16.</strong> Mermaid API</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">17.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">18.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">19.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">20.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 杂项</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">21.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">22.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 贡献和社区</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">23.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">24.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">25.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">26.</strong> Adding Diagrams</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">原文</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">📔 Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">27.</strong> About Mermaid</a></li><li class="chapter-item "><a href="n00b-gettingStarted.html"><strong aria-hidden="true">28.</strong> Deployment</a></li><li class="chapter-item "><a href="n00b-syntaxReference.html"><strong aria-hidden="true">29.</strong> Syntax and Configuration</a></li><li class="chapter-item affix "><li class="part-title">📊 Diagram Syntax</li><li class="chapter-item expanded "><a href="flowchart.html" class="active"><strong aria-hidden="true">30.</strong> Flowchart</a></li><li class="chapter-item "><a href="sequenceDiagram.html"><strong aria-hidden="true">31.</strong> Sequence diagram</a></li><li class="chapter-item "><a href="classDiagram.html"><strong aria-hidden="true">32.</strong> Class Diagram</a></li><li class="chapter-item "><a href="stateDiagram.html"><strong aria-hidden="true">33.</strong> State Diagram</a></li><li class="chapter-item "><a href="entityRelationshipDiagram.html"><strong aria-hidden="true">34.</strong> Entity Relationship Diagram</a></li><li class="chapter-item "><a href="user-journey.html"><strong aria-hidden="true">35.</strong> User Journey</a></li><li class="chapter-item "><a href="gantt.html"><strong aria-hidden="true">36.</strong> Gantt</a></li><li class="chapter-item "><a href="pie.html"><strong aria-hidden="true">37.</strong> Pie Chart</a></li><li class="chapter-item "><a href="requirementDiagram.html"><strong aria-hidden="true">38.</strong> Requirement Diagram</a></li><li class="chapter-item "><a href="examples.html"><strong aria-hidden="true">39.</strong> Other Examples</a></li><li class="chapter-item affix "><li class="part-title">⚙️ Deployment and Configuration</li><li class="chapter-item "><a href="Tutorials.html"><strong aria-hidden="true">40.</strong> Tutorials</a></li><li class="chapter-item "><a href="usage.html"><strong aria-hidden="true">41.</strong> API-Usage</a></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">42.</strong> Mermaid API Configuration</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">43.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">44.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">45.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">46.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 Misc</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">47.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">48.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 Contributions and Community</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">49.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">50.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">51.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">52.</strong> Adding Diagrams</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Mermaid zh-cn doc</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mermaid-js/mermaid/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hellowac/mermaid_doc/edit/gh-pages/src/flowchart.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="flowcharts---basic-syntax"><a class="header" href="#flowcharts---basic-syntax">Flowcharts - Basic Syntax</a></h1>
+<p><strong>Edit this Page</strong> <a href="https://github.com/mermaid-js/mermaid/blob/develop/docs/flowchart.md"><img src="img/GitHub-Mark-32px.png" alt="N|Solid" /></a></p>
+<p>All Flowcharts are composed of <strong>nodes</strong>, the geometric shapes and <strong>edges</strong>, the arrows or lines. The mermaid code defines the way that these <strong>nodes</strong> and <strong>edges</strong> are made and interact.</p>
+<p>It can also accomodate different arrow types, multi directional arrows, and linking to and from subgraphs.</p>
+<blockquote>
+<p><strong>Important note</strong>: Do not type the word &quot;end&quot; as a Flowchart node. Capitalize all or any one the letters to keep the flowchart from breaking, i.e, &quot;End&quot; or &quot;END&quot;. Or you can apply this <a href="https://github.com/mermaid-js/mermaid/issues/1444#issuecomment-639528897">workaround</a>.**
+Node</p>
+</blockquote>
+<h3 id="a-node-default"><a class="header" href="#a-node-default">A node (default)</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id
+</code></pre>
+<blockquote>
+<p><strong>Note</strong> The id is what is displayed in the box.</p>
+</blockquote>
+<h3 id="a-node-with-text"><a class="header" href="#a-node-with-text">A node with text</a></h3>
+<p>It is also possible to set text in the box that differs from the id. If this is done several times, it is the last text
+found for the node that will be used. Also if you define edges for the node later on, you can omit text definitions. The
+one previously defined will be used when rendering the box.</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1[This is the text in the box]
+</code></pre>
+<h2 id="graph"><a class="header" href="#graph">Graph</a></h2>
+<p>This statement declares the direction of the Flowchart.</p>
+<p>This declares the flowchart is oriented from top to bottom (<code>TD</code> or <code>TB</code>).</p>
+<pre><code class="language-mermaid-example">flowchart TD
+    Start --&gt; Stop
+</code></pre>
+<p>This declares the flowchart is oriented from left to right (<code>LR</code>).</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    Start --&gt; Stop
+</code></pre>
+<h2 id="flowchart-orientation"><a class="header" href="#flowchart-orientation">Flowchart Orientation</a></h2>
+<p>Possible FlowChart orientations are:</p>
+<ul>
+<li>TB - top to bottom</li>
+<li>TD - top-down/ same as top to bottom</li>
+<li>BT - bottom to top</li>
+<li>RL - right to left</li>
+<li>LR - left to right</li>
+</ul>
+<h2 id="node-shapes"><a class="header" href="#node-shapes">Node shapes</a></h2>
+<h3 id="a-node-with-round-edges"><a class="header" href="#a-node-with-round-edges">A node with round edges</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1(This is the text in the box)
+</code></pre>
+<h3 id="a-stadium-shaped-node"><a class="header" href="#a-stadium-shaped-node">A stadium-shaped node</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1([This is the text in the box])
+</code></pre>
+<h3 id="a-node-in-a-subroutine-shape"><a class="header" href="#a-node-in-a-subroutine-shape">A node in a subroutine shape</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1[[This is the text in the box]]
+</code></pre>
+<h3 id="a-node-in-a-cylindrical-shape"><a class="header" href="#a-node-in-a-cylindrical-shape">A node in a cylindrical shape</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1[(Database)]
+</code></pre>
+<h3 id="a-node-in-the-form-of-a-circle"><a class="header" href="#a-node-in-the-form-of-a-circle">A node in the form of a circle</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1((This is the text in the circle))
+</code></pre>
+<h3 id="a-node-in-an-asymmetric-shape"><a class="header" href="#a-node-in-an-asymmetric-shape">A node in an asymmetric shape</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1&gt;This is the text in the box]
+</code></pre>
+<p>Currently only the shape above is possible and not its mirror. <em>This might change with future releases.</em></p>
+<h3 id="a-node-rhombus"><a class="header" href="#a-node-rhombus">A node (rhombus)</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1{This is the text in the box}
+</code></pre>
+<h3 id="a-hexagon-node"><a class="header" href="#a-hexagon-node">A hexagon node</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1{{This is the text in the box}}
+</code></pre>
+<h3 id="parallelogram"><a class="header" href="#parallelogram">Parallelogram</a></h3>
+<pre><code class="language-mermaid-example">flowchart TD
+    id1[/This is the text in the box/]
+</code></pre>
+<h3 id="parallelogram-alt"><a class="header" href="#parallelogram-alt">Parallelogram alt</a></h3>
+<pre><code class="language-mermaid-example">flowchart TD
+    id1[\This is the text in the box\]
+</code></pre>
+<h3 id="trapezoid"><a class="header" href="#trapezoid">Trapezoid</a></h3>
+<pre><code class="language-mermaid-example">flowchart TD
+    A[/Christmas\]
+</code></pre>
+<h3 id="trapezoid-alt"><a class="header" href="#trapezoid-alt">Trapezoid alt</a></h3>
+<pre><code class="language-mermaid-example">flowchart TD
+    B[\Go shopping/]
+</code></pre>
+<h2 id="links-between-nodes"><a class="header" href="#links-between-nodes">Links between nodes</a></h2>
+<p>Nodes can be connected with links/edges. It is possible to have different types of links or attach a text string to a link.</p>
+<h3 id="a-link-with-arrow-head"><a class="header" href="#a-link-with-arrow-head">A link with arrow head</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    A--&gt;B
+</code></pre>
+<h3 id="an-open-link"><a class="header" href="#an-open-link">An open link</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    A --- B
+</code></pre>
+<h3 id="text-on-links"><a class="header" href="#text-on-links">Text on links</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    A-- This is the text! ---B
+</code></pre>
+<p>or</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A---|This is the text|B
+</code></pre>
+<h3 id="a-link-with-arrow-head-and-text"><a class="header" href="#a-link-with-arrow-head-and-text">A link with arrow head and text</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+    A--&gt;|text|B
+</code></pre>
+<p>or</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A-- text --&gt;B
+</code></pre>
+<h3 id="dotted-link"><a class="header" href="#dotted-link">Dotted link</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR;
+   A-.-&gt;B;
+</code></pre>
+<h3 id="dotted-link-with-text"><a class="header" href="#dotted-link-with-text">Dotted link with text</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+   A-. text .-&gt; B
+</code></pre>
+<h3 id="thick-link"><a class="header" href="#thick-link">Thick link</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+   A ==&gt; B
+</code></pre>
+<h3 id="thick-link-with-text"><a class="header" href="#thick-link-with-text">Thick link with text</a></h3>
+<pre><code class="language-mermaid-example">flowchart LR
+   A == text ==&gt; B
+</code></pre>
+<h3 id="chaining-of-links"><a class="header" href="#chaining-of-links">Chaining of links</a></h3>
+<p>It is possible declare many links in the same line as per below:</p>
+<pre><code class="language-mermaid-example">flowchart LR
+   A -- text --&gt; B -- text2 --&gt; C
+</code></pre>
+<p>It is also possible to declare multiple nodes links in the same line as per below:</p>
+<pre><code class="language-mermaid-example">flowchart LR
+   a --&gt; b &amp; c--&gt; d
+</code></pre>
+<p>You can then describe dependencies in a very expressive way. Like the one-liner below:</p>
+<pre><code class="language-mermaid-example">flowchart TB
+    A &amp; B--&gt; C &amp; D
+</code></pre>
+<p>If you describe the same diagram using the the basic syntax, it will take four lines. A
+word of warning, one could go overboard with this making the flowchart harder to read in
+markdown form. The Swedish word <code>lagom</code> comes to mind. It means, not too much and not too little.
+This goes for expressive syntaxes as well.</p>
+<pre><code class="language-mmd">flowchart TB
+    A --&gt; C
+    A --&gt; D
+    B --&gt; C
+    B --&gt; D
+</code></pre>
+<h3 id="new-arrow-types"><a class="header" href="#new-arrow-types">New arrow types</a></h3>
+<p>There are new types of arrows supported as per below:</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A --o B
+    B --x C
+</code></pre>
+<h3 id="multi-directional-arrows"><a class="header" href="#multi-directional-arrows">Multi directional arrows</a></h3>
+<p>There is the possibility to use multidirectional arrows.</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A o--o B
+    B &lt;--&gt; C
+    C x--x D
+</code></pre>
+<h3 id="minimum-length-of-a-link"><a class="header" href="#minimum-length-of-a-link">Minimum length of a link</a></h3>
+<p>Each node in the flowchart is ultimately assigned to a rank in the rendered
+graph, i.e. to a vertical or horizontal level (depending on the flowchart
+orientation), based on the nodes to which it is linked. By default, links
+can span any number of ranks, but you can ask for any link to be longer
+than the others by adding extra dashes in the link definition.</p>
+<p>In the following example, two extra dashes are added in the link from node <em>B</em>
+to node <em>E</em>, so that it spans two more ranks than regular links:</p>
+<pre><code class="language-mermaid-example">flowchart TD
+    A[Start] --&gt; B{Is it?};
+    B --&gt;|Yes| C[OK];
+    C --&gt; D[Rethink];
+    D --&gt; B;
+    B ----&gt;|No| E[End];
+</code></pre>
+<blockquote>
+<p><strong>Note</strong> Links may still be made longer than the requested number of ranks
+by the rendering engine to accommodate other requests.</p>
+</blockquote>
+<p>When the link label is written in the middle of the link, the extra dashes must
+be added on the right side of the link. The following example is equivalent to
+the previous one:</p>
+<pre><code class="language-mermaid-example">flowchart TD
+    A[Start] --&gt; B{Is it?};
+    B -- Yes --&gt; C[OK];
+    C --&gt; D[Rethink];
+    D --&gt; B;
+    B -- No ----&gt; E[End];
+</code></pre>
+<p>For dotted or thick links, the characters to add are equals signs or dots,
+as summed up in the following table:</p>
+<table><thead><tr><th>Length</th><th align="center">1</th><th align="center">2</th><th align="center">3</th></tr></thead><tbody>
+<tr><td>Normal</td><td align="center"><code>---</code></td><td align="center"><code>----</code></td><td align="center"><code>-----</code></td></tr>
+<tr><td>Normal with arrow</td><td align="center"><code>--&gt;</code></td><td align="center"><code>---&gt;</code></td><td align="center"><code>----&gt;</code></td></tr>
+<tr><td>Thick</td><td align="center"><code>===</code></td><td align="center"><code>====</code></td><td align="center"><code>=====</code></td></tr>
+<tr><td>Thick with arrow</td><td align="center"><code>==&gt;</code></td><td align="center"><code>===&gt;</code></td><td align="center"><code>====&gt;</code></td></tr>
+<tr><td>Dotted</td><td align="center"><code>-.-</code></td><td align="center"><code>-..-</code></td><td align="center"><code>-...-</code></td></tr>
+<tr><td>Dotted with arrow</td><td align="center"><code>-.-&gt;</code></td><td align="center"><code>-..-&gt;</code></td><td align="center"><code>-...-&gt;</code></td></tr>
+</tbody></table>
+<h2 id="special-characters-that-break-syntax"><a class="header" href="#special-characters-that-break-syntax">Special characters that break syntax</a></h2>
+<p>It is possible to put text within quotes in order to render more troublesome characters. As in the example below:</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1[&quot;This is the (text) in the box&quot;]
+</code></pre>
+<h3 id="entity-codes-to-escape-characters"><a class="header" href="#entity-codes-to-escape-characters">Entity codes to escape characters</a></h3>
+<p>It is possible to escape characters using the syntax exemplified here.</p>
+<pre><code class="language-mermaid-example">    flowchart LR
+        A[&quot;A double quote:#quot;&quot;] --&gt;B[&quot;A dec char:#9829;&quot;]
+</code></pre>
+<p>Numbers given are base 10, so <code>#</code> can be encoded as <code>#35;</code>. It is also supported to use HTML character names.</p>
+<h2 id="subgraphs"><a class="header" href="#subgraphs">Subgraphs</a></h2>
+<pre><code>subgraph title
+    graph definition
+end
+</code></pre>
+<p>An example below:</p>
+<pre><code class="language-mermaid-example">flowchart TB
+    c1--&gt;a2
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+</code></pre>
+<p>You can also set an explicit id for the subgraph.</p>
+<pre><code class="language-mermaid-example">flowchart TB
+    c1--&gt;a2
+    subgraph ide1 [one]
+    a1--&gt;a2
+    end
+</code></pre>
+<h2 id="beta-flowcharts"><a class="header" href="#beta-flowcharts">Beta: flowcharts</a></h2>
+<p>With the graphtype flowcharts it is also possible to set edges to and from subgraphs as in the flowchart below.</p>
+<pre><code class="language-mermaid-example">flowchart TB
+    c1--&gt;a2
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+    one --&gt; two
+    three --&gt; two
+    two --&gt; c2
+</code></pre>
+<h2 id="direction-in-subgraphs"><a class="header" href="#direction-in-subgraphs">Direction in subgraphs</a></h2>
+<p>With the graphtype flowcharts you can use the direction statement to set the direction which the subgraph will render like in this example.</p>
+<pre><code class="language-mermaid-example">flowchart LR
+  subgraph TOP
+    direction TB
+    subgraph B1
+        direction RL
+        i1 --&gt;f1
+    end
+    subgraph B2
+        direction BT
+        i2 --&gt;f2
+    end
+  end
+  A --&gt; TOP --&gt; B
+  B1 --&gt; B2
+</code></pre>
+<h2 id="interaction"><a class="header" href="#interaction">Interaction</a></h2>
+<p>It is possible to bind a click event to a node, the click can lead to either a javascript callback or to a link which will be opened in a new browser tab. <strong>Note</strong>: This functionality is disabled when using <code>securityLevel='strict'</code> and enabled when using <code>securityLevel='loose'</code>.</p>
+<pre><code>click nodeId callback
+click nodeId call callback()
+</code></pre>
+<ul>
+<li>nodeId is the id of the node</li>
+<li>callback is the name of a javascript function defined on the page displaying the graph, the function will be called with the nodeId as parameter.</li>
+</ul>
+<p>Examples of tooltip usage below:</p>
+<pre><code class="language-html">&lt;script&gt;
+  var callback = function(){
+      alert('A callback was triggered');
+  }
+&lt;/script&gt;
+</code></pre>
+<p>The tooltip text is surrounded in double quotes. The styles of the tooltip are set by the class <code>.mermaidTooltip</code>.</p>
+<pre><code class="language-mermaid-example">flowchart LR;
+    A--&gt;B;
+    B--&gt;C;
+    C--&gt;D;
+    click A callback &quot;Tooltip for a callback&quot;
+    click B &quot;http://www.github.com&quot; &quot;This is a tooltip for a link&quot;
+    click A call callback() &quot;Tooltip for a callback&quot;
+    click B href &quot;http://www.github.com&quot; &quot;This is a tooltip for a link&quot;
+</code></pre>
+<blockquote>
+<p><strong>Success</strong> The tooltip functionality and the ability to link to urls are available from version 0.5.2.</p>
+</blockquote>
+<p>?&gt; Due to limitations with how Docsify handles JavaScript callback functions, an alternate working demo for the above code can be viewed at <a href="https://jsfiddle.net/s37cjoau/3/">this jsfiddle</a>.</p>
+<p>Links are opened in the same browser tab/window by default. It is possible to change this by adding a link target to the click definition (<code>_self</code>, <code>_blank</code>, <code>_parent</code> and <code>_top</code> are supported):</p>
+<pre><code class="language-mermaid-example">flowchart LR;
+    A--&gt;B;
+    B--&gt;C;
+    C--&gt;D;
+    D--&gt;E;
+    click A &quot;http://www.github.com&quot; _blank
+    click B &quot;http://www.github.com&quot; &quot;Open this in a new tab&quot; _blank
+    click C href &quot;http://www.github.com&quot; _blank
+    click D href &quot;http://www.github.com&quot; &quot;Open this in a new tab&quot; _blank
+</code></pre>
+<p>Beginners tip, a full example using interactive links in a html context:</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div class=&quot;mermaid&quot;&gt;
+    flowchart LR;
+        A--&gt;B;
+        B--&gt;C;
+        C--&gt;D;
+        click A callback &quot;Tooltip&quot;
+        click B &quot;http://www.github.com&quot; &quot;This is a link&quot;
+        click C call callback() &quot;Tooltip&quot;
+        click D href &quot;http://www.github.com&quot; &quot;This is a link&quot;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    var callback = function(){
+        alert('A callback was triggered');
+    }
+    var config = {
+        startOnLoad:true,
+        flowchart:{
+            useMaxWidth:true,
+            htmlLabels:true,
+            curve:'cardinal',
+        },
+        securityLevel:'loose',
+    };
+
+    mermaid.initialize(config);
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="comments"><a class="header" href="#comments">Comments</a></h3>
+<p>Comments can be entered within a flow diagram, which will be ignored by the parser.  Comments need to be on their own line, and must be prefaced with <code>%%</code> (double percent signs). Any text after the start of the comment to the next newline will be treated as a comment, including any flow syntax</p>
+<pre><code class="language-mmd">flowchart LR
+%% this is a comment A -- text --&gt; B{node}
+   A -- text --&gt; B -- text2 --&gt; C
+</code></pre>
+<h2 id="styling-and-classes"><a class="header" href="#styling-and-classes">Styling and classes</a></h2>
+<h3 id="styling-links"><a class="header" href="#styling-links">Styling links</a></h3>
+<p>It is possible to style links. For instance you might want to style a link that is going backwards in the flow. As links
+have no ids in the same way as nodes, some other way of deciding what style the links should be attached to is required.
+Instead of ids, the order number of when the link was defined in the graph is used. In the example below the style
+defined in the linkStyle statement will belong to the fourth link in the graph:</p>
+<pre><code>linkStyle 3 stroke:#ff3,stroke-width:4px,color:red;
+</code></pre>
+<h3 id="styling-a-node"><a class="header" href="#styling-a-node">Styling a node</a></h3>
+<p>It is possible to apply specific styles such as a thicker border or a different background color to a node.</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    id1(Start)--&gt;id2(Stop)
+    style id1 fill:#f9f,stroke:#333,stroke-width:4px
+    style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+</code></pre>
+<h4 id="classes"><a class="header" href="#classes">Classes</a></h4>
+<p>More convenient than defining the style every time is to define a class of styles and attach this class to the nodes that
+should have a different look.</p>
+<p>a class definition looks like the example below:</p>
+<pre><code>    classDef className fill:#f9f,stroke:#333,stroke-width:4px;
+</code></pre>
+<p>Attachment of a class to a node is done as per below:</p>
+<pre><code>    class nodeId1 className;
+</code></pre>
+<p>It is also possible to attach a class to a list of nodes in one statement:</p>
+<pre><code>    class nodeId1,nodeId2 className;
+</code></pre>
+<p>A shorter form of adding a class is to attach the classname to the node using the <code>:::</code>operator as per below:</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A:::someclass --&gt; B
+    classDef someclass fill:#f96;
+</code></pre>
+<h3 id="css-classes"><a class="header" href="#css-classes">Css classes</a></h3>
+<p>It is also possible to predefine classes in css styles that can be applied from the graph definition as in the example
+below:</p>
+<p><strong>Example style</strong></p>
+<pre><code class="language-html">&lt;style&gt;
+    .cssClass &gt; rect{
+        fill:#FF0000;
+        stroke:#FFFF00;
+        stroke-width:4px;
+    }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Example definition</strong></p>
+<pre><code class="language-mermaid-example">flowchart LR;
+    A--&gt;B[AAA&lt;span&gt;BBB&lt;/span&gt;];
+    B--&gt;D;
+    class A cssClass;
+</code></pre>
+<h3 id="default-class"><a class="header" href="#default-class">Default class</a></h3>
+<p>If a class is named default it will be assigned to all classes without specific class definitions.</p>
+<pre><code>    classDef default fill:#f9f,stroke:#333,stroke-width:4px;
+</code></pre>
+<h2 id="basic-support-for-fontawesome"><a class="header" href="#basic-support-for-fontawesome">Basic support for fontawesome</a></h2>
+<p>It is possible to add icons from fontawesome.</p>
+<p>The icons are accessed via the syntax fa:#icon class name#.</p>
+<pre><code class="language-mermaid-example">flowchart TD
+    B[&quot;fa:fa-twitter for peace&quot;]
+    B--&gt;C[fa:fa-ban forbidden]
+    B--&gt;D(fa:fa-spinner);
+    B--&gt;E(A fa:fa-camera-retro perhaps?);
+</code></pre>
+<h2 id="graph-declarations-with-spaces-between-vertices-and-link-and-without-semicolon"><a class="header" href="#graph-declarations-with-spaces-between-vertices-and-link-and-without-semicolon">Graph declarations with spaces between vertices and link and without semicolon</a></h2>
+<ul>
+<li>
+<p>In graph declarations, the statements also can now end without a semicolon. After release 0.2.16, ending a graph statement with semicolon is just optional. So the below graph declaration is also valid along with the old declarations of the graph.</p>
+</li>
+<li>
+<p>A single space is allowed between vertices and the link. However there should not be any space between a vertex and its text and a link and its text. The old syntax of graph declaration will also work and hence this new feature is optional and is introduced to improve readability.</p>
+</li>
+</ul>
+<p>Below is the new declaration of the graph edges which is also valid along with the old declaration of the graph edges.</p>
+<pre><code class="language-mermaid-example">flowchart LR
+    A[Hard edge] --&gt;|Link text| B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration...</a></h2>
+<p>Is it possible to adjust the width of the rendered flowchart.</p>
+<p>This is done by defining <strong>mermaid.flowchartConfig</strong> or by the CLI to use a json file with the configuration. How to use
+the CLI is described in the mermaidCLI page.
+mermaid.flowchartConfig can be set to a JSON string with config parameters or the corresponding object.</p>
+<pre><code class="language-javascript">mermaid.flowchartConfig = {
+    width: 100%
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="n00b-syntaxReference.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="sequenceDiagram.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="n00b-syntaxReference.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="sequenceDiagram.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

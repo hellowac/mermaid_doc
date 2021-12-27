@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Theming - Mermaid zh-cn doc</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="explain.html">说明</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">中文</li><li class="chapter-item affix "><li class="part-title">📔 简介</li><li class="chapter-item "><a href="about_mermaid/index.html"><strong aria-hidden="true">1.</strong> 关于</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="about_mermaid/diagram_types.html"><strong aria-hidden="true">1.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="about_mermaid/install.html"><strong aria-hidden="true">1.2.</strong> 安装</a></li><li class="chapter-item "><a href="about_mermaid/sibling_projects.html"><strong aria-hidden="true">1.3.</strong> 相关项目</a></li></ol></li><li class="chapter-item "><a href="quick_start/index.html"><strong aria-hidden="true">2.</strong> 快速开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="quick_start/diagram_types.html"><strong aria-hidden="true">2.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="quick_start/four_ways.html"><strong aria-hidden="true">2.2.</strong> 4种使用方式</a></li><li class="chapter-item "><a href="quick_start/use_live_editor.html"><strong aria-hidden="true">2.3.</strong> 一在线编辑</a></li><li class="chapter-item "><a href="quick_start/use_mermaid_plugin.html"><strong aria-hidden="true">2.4.</strong> 二插件方式</a></li><li class="chapter-item "><a href="quick_start/use_js_api.html"><strong aria-hidden="true">2.5.</strong> 三使用JS API</a></li><li class="chapter-item "><a href="quick_start/use_add_dependency.html"><strong aria-hidden="true">2.6.</strong> 四添加依赖</a></li></ol></li><li class="chapter-item "><a href="syntax_reference/index.html"><strong aria-hidden="true">3.</strong> 语法和配置</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="syntax_reference/syntax_structure.html"><strong aria-hidden="true">3.1.</strong> 语法结构</a></li><li class="chapter-item "><a href="syntax_reference/mermaid_breaking.html"><strong aria-hidden="true">3.2.</strong> 特殊字符</a></li><li class="chapter-item "><a href="syntax_reference/configuration.html"><strong aria-hidden="true">3.3.</strong> 配置</a></li></ol></li><li class="chapter-item "><li class="part-title">📊 图表语法</li><li class="chapter-item "><a href="flowchart/index.html"><strong aria-hidden="true">4.</strong> 流程图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="flowchart/graph.html"><strong aria-hidden="true">4.1.</strong> 绘制</a></li><li class="chapter-item "><a href="flowchart/orientation.html"><strong aria-hidden="true">4.2.</strong> 绘制方向</a></li><li class="chapter-item "><a href="flowchart/node_shapes.html"><strong aria-hidden="true">4.3.</strong> 节点图形</a></li><li class="chapter-item "><a href="flowchart/links_between_nodes.html"><strong aria-hidden="true">4.4.</strong> 连接节点</a></li><li class="chapter-item "><a href="flowchart/special_characters.html"><strong aria-hidden="true">4.5.</strong> 破坏语法的特殊字符</a></li><li class="chapter-item "><a href="flowchart/subgraphs.html"><strong aria-hidden="true">4.6.</strong> 子图</a></li><li class="chapter-item "><a href="flowchart/beta_flowcharts.html"><strong aria-hidden="true">4.7.</strong> 测试流程图</a></li><li class="chapter-item "><a href="flowchart/direction_in_subgraphs.html"><strong aria-hidden="true">4.8.</strong> 子图绘制方向</a></li><li class="chapter-item "><a href="flowchart/interaction.html"><strong aria-hidden="true">4.9.</strong> 交互</a></li><li class="chapter-item "><a href="flowchart/styling_and_classes.html"><strong aria-hidden="true">4.10.</strong> 类样式</a></li><li class="chapter-item "><a href="flowchart/basic-support-for-fontawesome.html"><strong aria-hidden="true">4.11.</strong> 对 fontawesome 的基本支持</a></li><li class="chapter-item "><a href="flowchart/graph_declarations.html"><strong aria-hidden="true">4.12.</strong> 图形声明</a></li><li class="chapter-item "><a href="flowchart/configuration.html"><strong aria-hidden="true">4.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="sequence/index.html"><strong aria-hidden="true">5.</strong> 序列图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="sequence/syntax.html"><strong aria-hidden="true">5.1.</strong> 语法</a></li><li class="chapter-item "><a href="sequence/messages.html"><strong aria-hidden="true">5.2.</strong> 消息</a></li><li class="chapter-item "><a href="sequence/activations.html"><strong aria-hidden="true">5.3.</strong> 活跃</a></li><li class="chapter-item "><a href="sequence/notes.html"><strong aria-hidden="true">5.4.</strong> 笔记</a></li><li class="chapter-item "><a href="sequence/loops.html"><strong aria-hidden="true">5.5.</strong> 循环</a></li><li class="chapter-item "><a href="sequence/alt.html"><strong aria-hidden="true">5.6.</strong> 分支</a></li><li class="chapter-item "><a href="sequence/parallel.html"><strong aria-hidden="true">5.7.</strong> 并行</a></li><li class="chapter-item "><a href="sequence/background.html"><strong aria-hidden="true">5.8.</strong> 背景色</a></li><li class="chapter-item "><a href="sequence/comments.html"><strong aria-hidden="true">5.9.</strong> 注释</a></li><li class="chapter-item "><a href="sequence/code_to_char.html"><strong aria-hidden="true">5.10.</strong> 转义字符的实体代码</a></li><li class="chapter-item "><a href="sequence/sequence_numbers.html"><strong aria-hidden="true">5.11.</strong> 序号</a></li><li class="chapter-item "><a href="sequence/styling.html"><strong aria-hidden="true">5.12.</strong> 样式</a></li><li class="chapter-item "><a href="sequence/configuration.html"><strong aria-hidden="true">5.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="class/index.html"><strong aria-hidden="true">6.</strong> 类图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="class/syntax.html"><strong aria-hidden="true">6.1.</strong> 语法</a></li><li class="chapter-item "><a href="class/define_a_class.html"><strong aria-hidden="true">6.2.</strong> 定义类</a></li><li class="chapter-item "><a href="class/defining_members_of_a_class.html"><strong aria-hidden="true">6.3.</strong> 定义成员</a></li><li class="chapter-item "><a href="class/defining_relationship.html"><strong aria-hidden="true">6.4.</strong> 定义关系</a></li><li class="chapter-item "><a href="class/cardinality_multiplicity_on_relations.html"><strong aria-hidden="true">6.5.</strong> 多重性</a></li><li class="chapter-item "><a href="class/annotations_on_classes.html"><strong aria-hidden="true">6.6.</strong> 类的注释</a></li><li class="chapter-item "><a href="class/comments.html"><strong aria-hidden="true">6.7.</strong> 注释</a></li><li class="chapter-item "><a href="class/setting_the_direction_of_the_diagram.html"><strong aria-hidden="true">6.8.</strong> 绘图方向</a></li><li class="chapter-item "><a href="class/interaction.html"><strong aria-hidden="true">6.9.</strong> 交互</a></li><li class="chapter-item "><a href="class/styling.html"><strong aria-hidden="true">6.10.</strong> 样式</a></li><li class="chapter-item "><a href="class/configuration.html"><strong aria-hidden="true">6.11.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="state/index.html"><strong aria-hidden="true">7.</strong> 状态图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="state/states.html"><strong aria-hidden="true">7.1.</strong> 状态</a></li><li class="chapter-item "><a href="state/transitions.html"><strong aria-hidden="true">7.2.</strong> 过渡</a></li><li class="chapter-item "><a href="state/start-and-end.html"><strong aria-hidden="true">7.3.</strong> 开始和结束</a></li><li class="chapter-item "><a href="state/composite-states.html"><strong aria-hidden="true">7.4.</strong> 复合状态</a></li><li class="chapter-item "><a href="state/choice.html"><strong aria-hidden="true">7.5.</strong> 选择</a></li><li class="chapter-item "><a href="state/forks.html"><strong aria-hidden="true">7.6.</strong> 克隆</a></li><li class="chapter-item "><a href="state/notes.html"><strong aria-hidden="true">7.7.</strong> 笔记</a></li><li class="chapter-item "><a href="state/concurrency.html"><strong aria-hidden="true">7.8.</strong> 并发</a></li><li class="chapter-item "><a href="state/setting-the-direction-of-the-diagram.html"><strong aria-hidden="true">7.9.</strong> 绘制方向</a></li><li class="chapter-item "><a href="state/comments.html"><strong aria-hidden="true">7.10.</strong> 注释</a></li><li class="chapter-item "><a href="state/styling.html"><strong aria-hidden="true">7.11.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="entity_relationship/index.html"><strong aria-hidden="true">8.</strong> ER图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="entity_relationship/syntax.html"><strong aria-hidden="true">8.1.</strong> 语法</a></li><li class="chapter-item "><a href="entity_relationship/styling.html"><strong aria-hidden="true">8.2.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="user_journey.html"><strong aria-hidden="true">9.</strong> 用户旅程图</a></li><li class="chapter-item "><a href="gantt/index.html"><strong aria-hidden="true">10.</strong> 甘特图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="gantt/note.html"><strong aria-hidden="true">10.1.</strong> 笔记</a></li><li class="chapter-item "><a href="gantt/syntax.html"><strong aria-hidden="true">10.2.</strong> 语法</a></li><li class="chapter-item "><a href="gantt/setting-dates.html"><strong aria-hidden="true">10.3.</strong> 设置日期</a></li><li class="chapter-item "><a href="gantt/comments.html"><strong aria-hidden="true">10.4.</strong> 注释</a></li><li class="chapter-item "><a href="gantt/styling.html"><strong aria-hidden="true">10.5.</strong> 样式</a></li><li class="chapter-item "><a href="gantt/today-marker.html"><strong aria-hidden="true">10.6.</strong> 当日标记</a></li><li class="chapter-item "><a href="gantt/configuration.html"><strong aria-hidden="true">10.7.</strong> 配置</a></li><li class="chapter-item "><a href="gantt/interaction.html"><strong aria-hidden="true">10.8.</strong> 交互</a></li></ol></li><li class="chapter-item "><a href="pie/index.html"><strong aria-hidden="true">11.</strong> 饼图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pie/syntax.html"><strong aria-hidden="true">11.1.</strong> 语法</a></li><li class="chapter-item "><a href="pie/example.html"><strong aria-hidden="true">11.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="requirement/index.html"><strong aria-hidden="true">12.</strong> 需求图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="requirement/syntax.html"><strong aria-hidden="true">12.1.</strong> 语法</a></li><li class="chapter-item "><a href="requirement/example.html"><strong aria-hidden="true">12.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="examples/index.html"><strong aria-hidden="true">13.</strong> 其他样例</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="examples/pie.html"><strong aria-hidden="true">13.1.</strong> 基本饼图</a></li><li class="chapter-item "><a href="examples/sequence.html"><strong aria-hidden="true">13.2.</strong> 基本序列图</a></li><li class="chapter-item "><a href="examples/flowchart.html"><strong aria-hidden="true">13.3.</strong> 基本流程图</a></li><li class="chapter-item "><a href="examples/flowchart_styling.html"><strong aria-hidden="true">13.4.</strong> 流程图和样式</a></li><li class="chapter-item "><a href="examples/sequence_loop.html"><strong aria-hidden="true">13.5.</strong> 序列图:循环，分支</a></li><li class="chapter-item "><a href="examples/sequence_message.html"><strong aria-hidden="true">13.6.</strong> 序列图:自循环</a></li></ol></li><li class="chapter-item "><li class="part-title">⚙️ 部署和配置</li><li class="chapter-item "><a href="tutorials.html"><strong aria-hidden="true">14.</strong> 教程</a></li><li class="chapter-item "><a href="usage/index.html"><strong aria-hidden="true">15.</strong> API 用法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/using_mermaid.html"><strong aria-hidden="true">15.1.</strong> 使用Mermaid</a></li><li class="chapter-item "><a href="usage/simple_full_example.html"><strong aria-hidden="true">15.2.</strong> 简单样例</a></li><li class="chapter-item "><a href="usage/notes.html"><strong aria-hidden="true">15.3.</strong> 注意</a></li><li class="chapter-item "><a href="usage/enable_click_event_and_tags_in_nodes.html"><strong aria-hidden="true">15.4.</strong> 在节点中启用点击事件和标签</a></li><li class="chapter-item "><a href="usage/security_level.html"><strong aria-hidden="true">15.5.</strong> 安全级别</a></li><li class="chapter-item "><a href="usage/usage_with_webpack.html"><strong aria-hidden="true">15.6.</strong> 与webpack使用</a></li><li class="chapter-item "><a href="usage/api_usage.html"><strong aria-hidden="true">15.7.</strong> api用法</a></li><li class="chapter-item "><a href="usage/example_of_a_marked_renderer.html"><strong aria-hidden="true">15.8.</strong> 于marked使用样例</a></li><li class="chapter-item "><a href="usage/advanced_usage.html"><strong aria-hidden="true">15.9.</strong> 高级用法</a></li><li class="chapter-item "><a href="usage/configuration.html"><strong aria-hidden="true">15.10.</strong> 配置</a></li><li class="chapter-item "><a href="usage/using_the_initialize_call.html"><strong aria-hidden="true">15.11.</strong> 调用initialize</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_object.html"><strong aria-hidden="true">15.12.</strong> 使用mermaid对象</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_config.html"><strong aria-hidden="true">15.13.</strong> 使用mermaid配置</a></li><li class="chapter-item "><a href="usage/using_the_mermaidinit_call.html"><strong aria-hidden="true">15.14.</strong> 调用mermaid.init</a></li></ol></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">16.</strong> Mermaid API</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">17.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html" class="active"><strong aria-hidden="true">18.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">19.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">20.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 杂项</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">21.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">22.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 贡献和社区</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">23.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">24.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">25.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">26.</strong> Adding Diagrams</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">原文</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">📔 Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">27.</strong> About Mermaid</a></li><li class="chapter-item "><a href="n00b-gettingStarted.html"><strong aria-hidden="true">28.</strong> Deployment</a></li><li class="chapter-item "><a href="n00b-syntaxReference.html"><strong aria-hidden="true">29.</strong> Syntax and Configuration</a></li><li class="chapter-item affix "><li class="part-title">📊 Diagram Syntax</li><li class="chapter-item "><a href="flowchart.html"><strong aria-hidden="true">30.</strong> Flowchart</a></li><li class="chapter-item "><a href="sequenceDiagram.html"><strong aria-hidden="true">31.</strong> Sequence diagram</a></li><li class="chapter-item "><a href="classDiagram.html"><strong aria-hidden="true">32.</strong> Class Diagram</a></li><li class="chapter-item "><a href="stateDiagram.html"><strong aria-hidden="true">33.</strong> State Diagram</a></li><li class="chapter-item "><a href="entityRelationshipDiagram.html"><strong aria-hidden="true">34.</strong> Entity Relationship Diagram</a></li><li class="chapter-item "><a href="user-journey.html"><strong aria-hidden="true">35.</strong> User Journey</a></li><li class="chapter-item "><a href="gantt.html"><strong aria-hidden="true">36.</strong> Gantt</a></li><li class="chapter-item "><a href="pie.html"><strong aria-hidden="true">37.</strong> Pie Chart</a></li><li class="chapter-item "><a href="requirementDiagram.html"><strong aria-hidden="true">38.</strong> Requirement Diagram</a></li><li class="chapter-item "><a href="examples.html"><strong aria-hidden="true">39.</strong> Other Examples</a></li><li class="chapter-item affix "><li class="part-title">⚙️ Deployment and Configuration</li><li class="chapter-item "><a href="Tutorials.html"><strong aria-hidden="true">40.</strong> Tutorials</a></li><li class="chapter-item "><a href="usage.html"><strong aria-hidden="true">41.</strong> API-Usage</a></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">42.</strong> Mermaid API Configuration</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">43.</strong> Directives</a></li><li class="chapter-item expanded "><a href="theming.html" class="active"><strong aria-hidden="true">44.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">45.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">46.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 Misc</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">47.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">48.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 Contributions and Community</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">49.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">50.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">51.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">52.</strong> Adding Diagrams</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Mermaid zh-cn doc</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mermaid-js/mermaid/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hellowac/mermaid_doc/edit/gh-pages/src/theming.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="theme-configuration"><a class="header" href="#theme-configuration">Theme Configuration</a></h1>
+<p><strong>Edit this Page</strong> <a href="https://github.com/mermaid-js/mermaid/blob/develop/docs/theming.md"><img src="img/GitHub-Mark-32px.png" alt="N|Solid" /></a></p>
+<p>With Version 8.7.0 Mermaid comes out with a system for dynamic and integrated configuration of the diagram themes. The objective of this is to increase the customizability of mermaid and the ease of Styling, with the customization of themes through the <code>%%init%%</code> directive and <code>initialize</code> calls.</p>
+<p>Themes follow and build upon the Levels of Configuration and employ <code>directives</code> to modify and create custom configurations, as they were introduced in Version <a href="./8.6.0_docs.html">8.6.0</a>.</p>
+<p>**These Theming Configurations, similar to directives, will also be made applicable in the Live-Editor, to maximize customizability.</p>
+<h2 id="site-wide-themes"><a class="header" href="#site-wide-themes">Site-wide Themes</a></h2>
+<p>Site-wide themes are still declared via <code>initialize</code> by site owners.</p>
+<p>Example of <code>Initalize</code> call setting <code>theme</code> to <code>base</code>:</p>
+<pre><code class="language-javascript">    mermaidAPI.initialize({
+        'securityLevel': 'loose', 'theme': 'base'
+    });
+</code></pre>
+<p><strong>Notes</strong>: Only site owners can use the <code>mermaidAPI.initialize</code> call, to set values. Site-Users will have to use <code>%%init%%</code> to modify or create the theme for their diagrams.</p>
+<h2 id="themes-at-the-local-or-current-level"><a class="header" href="#themes-at-the-local-or-current-level">Themes at the Local or Current Level</a></h2>
+<p>When Generating a diagram using on a webpage that supports mermaid. It is also possible to override site-wide theme settings locally, for a specific diagram, using directives, as long as it is not prohibited by the <code>secure</code> array.</p>
+<pre><code class="language-mmd">%%{init: {'theme':'base'}}%%
+  graph TD
+    a --&gt; b
+</code></pre>
+<p>Here is an example of how <code>%%init%%</code> can set the theme to 'base', this assumes that <code>themeVariables</code> are set to default:</p>
+<pre><code class="language-mermaid-example">%%{init: {'theme':'base'}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<h1 id="making-a-custom-theme--with-themevariables"><a class="header" href="#making-a-custom-theme--with-themevariables">Making a Custom Theme  with <code>themeVariables</code></a></h1>
+<p>The easiest way to make a custom theme is to start with the base theme, and just modify theme variables through <code>themeVariables</code>, via <code>%%init%%</code>.</p>
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Type</th><th>Required</th><th>Objects contained</th></tr></thead><tbody>
+<tr><td>themeVariables</td><td>Array containing objects, modifiable with the <code>%%init%%</code> directive</td><td>Array</td><td>Required</td><td>primaryColor, lineColor, textColor</td></tr>
+</tbody></table>
+<h2 id="here-is-an-example-of-overriding-primarycolor-through-themevariables-and-giving-everything-a-different-look-using-init"><a class="header" href="#here-is-an-example-of-overriding-primarycolor-through-themevariables-and-giving-everything-a-different-look-using-init">Here is an example of overriding <code>primaryColor</code> through <code>themeVariables</code> and giving everything a different look, using <code>%%init%%</code>.</a></h2>
+<pre><code class="language-mermaid-example">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<p><strong>Notes:</strong>
+Leaving it empty will set all variable values to default.</p>
+<h2 id="color-and-color-calculation"><a class="header" href="#color-and-color-calculation">Color and Color Calculation:</a></h2>
+<p>Color definitions have certain interactions in mermaid, this is in order to ensure visibility for diagrams. mermaid will adjust some variables automatically, when colors are changed in order to compensate and maintain readability.</p>
+<p><strong>The Default Value Column</strong> to the right of the Variable column will denote the Variable paired/associated with the Variable on the left and the nature of this pairing or association. If it for instance says primaryColor it means that it gets primaryColor as default value. If it says &quot;based on primaryColor&quot; it means that it is calculated/ derived from primaryColor. This calculation can be primary color inversion, a change of hue, darkening or lightening by 10%, etc.</p>
+<p>You can create your own themes, by changing any of the given variables below. If you are using a dark background, set dark mode to true to adjust the colors. It is possible to override the calculations using the variable names below, with <code>%%init%%</code> if you wish to style it differently.</p>
+<h2 id="theme-variables-reference-table"><a class="header" href="#theme-variables-reference-table">Theme Variables Reference Table</a></h2>
+<pre><code class="language-note">Variables that are unique to some diagrams can be affected by changes in Theme Variables
+</code></pre>
+<table><thead><tr><th>Variable</th><th>Default/Base/Factor value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>darkMode</td><td>false</td><td></td><td>Boolean Value that dictates how to calculate colors. &quot;true&quot; will activate darkmode.</td></tr>
+<tr><td>background</td><td>#f4f4f4</td><td></td><td>Used to calculate color for items that should either be background colored or contrasting to the background.</td></tr>
+<tr><td>primaryColor</td><td>#fff4dd</td><td></td><td>Color to be used as background in nodes, other colors will be derived from this</td></tr>
+<tr><td>fontFamily</td><td>&quot;trebuchet ms&quot;, verdana, arial</td><td></td><td></td></tr>
+<tr><td>fontSize</td><td>16px</td><td></td><td>Font Size, in pixels</td></tr>
+<tr><td>secondaryColor</td><td>based on primaryColor</td><td>*</td><td></td></tr>
+<tr><td>tertiaryColor</td><td>based on primaryColor</td><td>*</td><td></td></tr>
+<tr><td>primaryBorderColor</td><td>based on primaryColor</td><td>*</td><td>Color to be used as border in nodes using primaryColor</td></tr>
+<tr><td>primaryTextColor</td><td>based on darkMode #ddd/#333</td><td>*</td><td>Color to be used as text color in nodes using primaryColor</td></tr>
+<tr><td>secondaryBorderColor</td><td>based on secondaryColor</td><td>*</td><td>Color to be used as border in nodes using secondaryColor</td></tr>
+<tr><td>secondaryTextColor</td><td>based on secondaryColor</td><td>*</td><td>Color to be used as text color in nodes using secondaryColor</td></tr>
+<tr><td>tertiaryBorderColor</td><td>based on tertiaryColor</td><td>*</td><td>Color to be used as border in nodes using tertiaryColor</td></tr>
+<tr><td>tertiaryTextColor</td><td>based on tertiaryColor</td><td>*</td><td>Color to be used as text color in nodes using tertiaryColor</td></tr>
+<tr><td>noteBkgColor</td><td>#fff5ad</td><td></td><td>Color used as background in notes</td></tr>
+<tr><td>noteTextColor</td><td>#333</td><td></td><td>Text color in note rectangles.</td></tr>
+<tr><td>noteBorderColor</td><td>based on noteBkgColor</td><td>*</td><td>Border color in note rectangles.</td></tr>
+<tr><td>lineColor</td><td>based on background</td><td>*</td><td></td></tr>
+<tr><td>textColor</td><td>based on primaryTextColor</td><td>*</td><td>Text in diagram over the background for instance text on labels and on signals in sequence diagram or the title in gantt diagram</td></tr>
+<tr><td>mainBkg</td><td>based on primaryColor</td><td>*</td><td>Background in flowchart objects like rects/circles, class diagram classes, sequence diagram  etc</td></tr>
+<tr><td>errorBkgColor</td><td>tertiaryColor</td><td>*</td><td>Color for syntax error message</td></tr>
+<tr><td>errorTextColor</td><td>tertiaryTextColor</td><td>*</td><td>Color for syntax error message</td></tr>
+</tbody></table>
+<h1 id="what-follows-are-variables-specific-to-different-diagrams-and-charts"><a class="header" href="#what-follows-are-variables-specific-to-different-diagrams-and-charts">What follows are Variables, specific to different diagrams and charts.</a></h1>
+<h2 id="some-theme-variables-serve-as-or-affect-the-default-values-for-specific-diagram-variables-unless-changed-using-init-"><a class="header" href="#some-theme-variables-serve-as-or-affect-the-default-values-for-specific-diagram-variables-unless-changed-using-init-">Some Theme Variables serve as, or affect the Default Values for Specific Diagram Variables, unless changed using <code>%%init%%</code> .</a></h2>
+<h2 id="flowchart"><a class="header" href="#flowchart">Flowchart</a></h2>
+<table><thead><tr><th>Variable</th><th>Default/ Associated Value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>nodeBorder</td><td>primaryBorderColor</td><td>*</td><td>Node Border Color</td></tr>
+<tr><td>clusterBkg</td><td>tertiaryColor</td><td>*</td><td>Background in subgraphs</td></tr>
+<tr><td>clusterBorder</td><td>tertiaryBorderColor</td><td>*</td><td>Cluster Border Color</td></tr>
+<tr><td>defaultLinkColor</td><td>lineColor</td><td>*</td><td>Link Color</td></tr>
+<tr><td>titleColor</td><td>tertiaryTextColor</td><td>*</td><td>Title Color</td></tr>
+<tr><td>edgeLabelBackground</td><td>based on secondaryColor</td><td>*</td><td></td></tr>
+<tr><td>nodeTextColor</td><td>primaryTextColor</td><td>*</td><td>Color for text inside Nodes.</td></tr>
+</tbody></table>
+<h1 id="sequence-diagram"><a class="header" href="#sequence-diagram">sequence diagram</a></h1>
+<table><thead><tr><th>name</th><th>Default value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>actorBorder</td><td>primaryBorderColor</td><td>*</td><td>Actor Border Color</td></tr>
+<tr><td>actorBkg</td><td>mainBkg</td><td>*</td><td>Actor Background Color</td></tr>
+<tr><td>actorTextColor</td><td>primaryTextColor</td><td>*</td><td>Actor Text Color</td></tr>
+<tr><td>actorLineColor</td><td>grey</td><td>*</td><td>Actor Line Color</td></tr>
+<tr><td>labelBoxBkgColor</td><td>actorBkg</td><td>*</td><td>Label Box Background Color</td></tr>
+<tr><td>signalColor</td><td>textColor</td><td>*</td><td>Signal Color</td></tr>
+<tr><td>signalTextColor</td><td>textColor</td><td>*</td><td>Signal Text Color</td></tr>
+<tr><td>labelBoxBorderColor</td><td>actorBorder</td><td>*</td><td>Label Box Border Color</td></tr>
+<tr><td>labelTextColor</td><td>actorTextColor</td><td>*</td><td>Label Text Color</td></tr>
+<tr><td>loopTextColor</td><td>actorTextColor</td><td>*</td><td>Loop ext Color</td></tr>
+<tr><td>activationBorderColor</td><td>based on secondaryColor</td><td>*</td><td>Activation Border Color</td></tr>
+<tr><td>activationBkgColor</td><td>secondaryColor</td><td>*</td><td>Activation Background Color</td></tr>
+<tr><td>sequenceNumberColor</td><td>based on lineColor</td><td>*</td><td>Sequence Number Color</td></tr>
+</tbody></table>
+<h1 id="state-colors"><a class="header" href="#state-colors">state colors</a></h1>
+<table><thead><tr><th>name</th><th>Default value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>labelColor</td><td>primaryTextColor</td><td>*</td><td></td></tr>
+<tr><td>altBackground</td><td>tertiaryColor</td><td>*</td><td>Used for background in deep composite states</td></tr>
+</tbody></table>
+<h1 id="class-colors"><a class="header" href="#class-colors">class colors</a></h1>
+<table><thead><tr><th>name</th><th>Default value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>classText</td><td>textColor</td><td>*</td><td>Color of Text in class diagrams</td></tr>
+</tbody></table>
+<h1 id="user-journey-colors"><a class="header" href="#user-journey-colors">User journey colors</a></h1>
+<table><thead><tr><th>name</th><th>Default value</th><th>Calc</th><th>Description</th></tr></thead><tbody>
+<tr><td>fillType0</td><td>primaryColor</td><td>*</td><td>Fill for 1st section in journey diagram</td></tr>
+<tr><td>fillType1</td><td>secondaryColor</td><td>*</td><td>Fill for 2nd section in journey diagram</td></tr>
+<tr><td>fillType2</td><td>based on primaryColor</td><td>*</td><td>Fill for 3rd section in journey diagram</td></tr>
+<tr><td>fillType3</td><td>based on  secondaryColor</td><td>*</td><td>Fill for 4th section in journey diagram</td></tr>
+<tr><td>fillType4</td><td>based on primaryColor</td><td>*</td><td>Fill for 5th section in journey diagram</td></tr>
+<tr><td>fillType5</td><td>based on secondaryColor</td><td>*</td><td>Fill for 6th section in journey diagram</td></tr>
+<tr><td>fillType6</td><td>based on primaryColor</td><td>*</td><td>Fill for 7th section in journey diagram</td></tr>
+<tr><td>fillType7</td><td>based on secondaryColor</td><td>*</td><td>Fill for 8th section in journey diagram</td></tr>
+</tbody></table>
+<p>**Notes: Values are meant to create an alternating look.</p>
+<h1 id="here-is-an-example-of-overriding-primarycolor-and-giving-everything-a-different-look-using-init"><a class="header" href="#here-is-an-example-of-overriding-primarycolor-and-giving-everything-a-different-look-using-init">Here is an example of overriding <code>primaryColor</code> and giving everything a different look, using <code>%%init%%</code>.</a></h1>
+<pre><code class="language-mermaid-example">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<p>**This got a bit too dark and bit too colorful. With some easy steps this can be fixed:</p>
+<ul>
+<li>Make the primary color a little lighter</li>
+<li>set the tertiary color to a reddish shade as well</li>
+<li>make the edge label background differ from the subgraph by setting the edgeLabelBackground</li>
+</ul>
+<pre><code class="language-mermaid-example">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<p>The Theming Engine does not admit color codes and will only accept proper color values. Color Names is not supported so for instance, the color value 'red' will not work, but '#ff0000' will work.</p>
+<h1 id="common-theming-activities"><a class="header" href="#common-theming-activities">Common theming activities</a></h1>
+<h2 id="how-to-change-the-color-of-the-arrows"><a class="header" href="#how-to-change-the-color-of-the-arrows">How to change the color of the arrows</a></h2>
+<h1 id="examples"><a class="header" href="#examples">Examples:</a></h1>
+<p>When adjusting a theme it might be helpful to look at how your preferred theme goes with the diagrams, to evaluate whether everything is visible and looks good.
+In the following examples, the directive <code>init</code> is used, with the <code>theme</code> being declared as <code>base</code>. For more information on using directives, read the documentation for <a href="/8.6.0_docs.html">Version 8.6.0</a></p>
+<h3 id="flowchart-1"><a class="header" href="#flowchart-1">Flowchart</a></h3>
+<pre><code class="language-mmd">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<pre><code class="language-mermaid">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+        graph TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[/Another/]
+          C ==&gt;|One| D[Laptop]
+          C --&gt;|Two| E[iPhone]
+          C --&gt;|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<h3 id="flowchart-beta"><a class="header" href="#flowchart-beta">Flowchart (beta)</a></h3>
+<pre><code class="language-mermaid-example">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+        flowchart TD
+          A[Christmas] --&gt;|Get money| B(Go shopping)
+          B --&gt; C{Let me think}
+          B --&gt; G[Another]
+          C ==&gt;|One| D[Laptop]
+          C x--x|Two| E[iPhone]
+          C o--o|Three| F[fa:fa-car Car]
+          subgraph section
+            C
+            D
+            E
+            F
+            G
+          end
+</code></pre>
+<h3 id="sequence-diagram-1"><a class="header" href="#sequence-diagram-1">Sequence diagram</a></h3>
+<pre><code class="language-mermaid-example">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+        sequenceDiagram
+          autonumber
+          par Action 1
+            Alice-&gt;&gt;John: Hello John, how are you?
+          and Action 2
+            Alice-&gt;&gt;Bob: Hello Bob, how are you?
+          end
+          Alice-&gt;&gt;+John: Hello John, how are you?
+          Alice-&gt;&gt;+John: John, can you hear me?
+          John--&gt;&gt;-Alice: Hi Alice, I can hear you!
+          Note right of John: John is perceptive
+          John--&gt;&gt;-Alice: I feel great!
+              loop Every minute
+                John--&gt;Alice: Great!
+            end
+</code></pre>
+<h3 id="class-diagram"><a class="header" href="#class-diagram">Class diagram</a></h3>
+<pre><code class="language-mermaid-example">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+
+classDiagram
+	Animal &quot;1&quot; &lt;|-- Duck
+	Animal &lt;|-- Fish
+	Animal &lt;--o Zebra
+	Animal : +int age
+	Animal : +String gender
+	Animal: +isMammal()
+	Animal: +mate()
+	class Duck{
+		+String beakColor
+		+swim()
+		+quack()
+	}
+	class Fish{
+		-int sizeInFeet
+		-canEat()
+	}
+	class Zebra{
+		+bool is_wild
+		+run()
+	}
+</code></pre>
+<h3 id="gantt"><a class="header" href="#gantt">Gantt</a></h3>
+<pre><code class="language-mermaid-example">gantt
+       dateFormat                YYYY-MM-DD
+       title                     Adding GANTT diagram functionality to mermaid
+       excludes                  :excludes the named dates/days from being included in a charted task..
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+</code></pre>
+<h3 id="state-diagram"><a class="header" href="#state-diagram">State diagram</a></h3>
+<pre><code class="language-mermaid-example">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+      stateDiagram
+        [*] --&gt; Active
+
+        state Active {
+            [*] --&gt; NumLockOff
+            NumLockOff --&gt; NumLockOn : EvNumLockPressed
+            NumLockOn --&gt; NumLockOff : EvNumLockPressed
+            --
+            [*] --&gt; CapsLockOff
+            CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed
+            CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed
+            --
+            [*] --&gt; ScrollLockOff
+            ScrollLockOff --&gt; ScrollLockOn : EvCapsLockPressed
+            ScrollLockOn --&gt; ScrollLockOff : EvCapsLockPressed
+        }
+        state SomethingElse {
+          A --&gt; B
+          B --&gt; A
+        }
+
+        Active --&gt; SomethingElse
+        note right of SomethingElse : This is the note to the right.
+
+        SomethingElse --&gt; [*]
+
+</code></pre>
+<h3 id="state-diagram-beta"><a class="header" href="#state-diagram-beta">State diagram (beta)</a></h3>
+<pre><code class="language-mermaid-example">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+stateDiagram-v2
+        [*] --&gt; Active
+
+        state Active {
+            [*] --&gt; NumLockOff
+            NumLockOff --&gt; NumLockOn : EvNumLockPressed
+            NumLockOn --&gt; NumLockOff : EvNumLockPressed
+            --
+            [*] --&gt; CapsLockOff
+            CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed
+            CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed
+            --
+            [*] --&gt; ScrollLockOff
+            ScrollLockOff --&gt; ScrollLockOn : EvCapsLockPressed
+            ScrollLockOn --&gt; ScrollLockOff : EvCapsLockPressed
+        }
+        state SomethingElse {
+          A --&gt; B
+          B --&gt; A
+        }
+
+        Active --&gt; SomethingElse2
+        note right of SomethingElse2 : This is the note to the right.
+
+        SomethingElse2 --&gt; [*]
+</code></pre>
+<h3 id="entity-relations-diagram"><a class="header" href="#entity-relations-diagram">Entity Relations diagram</a></h3>
+<pre><code class="language-mermaid-example">      erDiagram
+        CUSTOMER }|..|{ DELIVERY-ADDRESS : has
+        CUSTOMER ||--o{ ORDER : places
+        CUSTOMER ||--o{ INVOICE : &quot;liable for&quot;
+        DELIVERY-ADDRESS ||--o{ ORDER : receives
+        INVOICE ||--|{ ORDER : covers
+        ORDER ||--|{ ORDER-ITEM : includes
+        PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+        PRODUCT ||--o{ ORDER-ITEM : &quot;ordered in&quot;
+</code></pre>
+<h3 id="user-journey-diagram"><a class="header" href="#user-journey-diagram">User journey diagram</a></h3>
+<pre><code class="language-mermaid-example">journey
+            title My working day
+            section Go to work
+              Make tea: 5: Me
+              Go upstairs: 3: Me
+              Do work: 1: Me, Cat
+            section Go home
+              Go downstairs: 5: Me
+              Sit down: 5: Me
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="directives.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="mermaidCLI.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="directives.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="mermaidCLI.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pie Chart - Mermaid zh-cn doc</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="explain.html">说明</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">中文</li><li class="chapter-item affix "><li class="part-title">📔 简介</li><li class="chapter-item "><a href="about_mermaid/index.html"><strong aria-hidden="true">1.</strong> 关于</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="about_mermaid/diagram_types.html"><strong aria-hidden="true">1.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="about_mermaid/install.html"><strong aria-hidden="true">1.2.</strong> 安装</a></li><li class="chapter-item "><a href="about_mermaid/sibling_projects.html"><strong aria-hidden="true">1.3.</strong> 相关项目</a></li></ol></li><li class="chapter-item "><a href="quick_start/index.html"><strong aria-hidden="true">2.</strong> 快速开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="quick_start/diagram_types.html"><strong aria-hidden="true">2.1.</strong> 图表类型</a></li><li class="chapter-item "><a href="quick_start/four_ways.html"><strong aria-hidden="true">2.2.</strong> 4种使用方式</a></li><li class="chapter-item "><a href="quick_start/use_live_editor.html"><strong aria-hidden="true">2.3.</strong> 一在线编辑</a></li><li class="chapter-item "><a href="quick_start/use_mermaid_plugin.html"><strong aria-hidden="true">2.4.</strong> 二插件方式</a></li><li class="chapter-item "><a href="quick_start/use_js_api.html"><strong aria-hidden="true">2.5.</strong> 三使用JS API</a></li><li class="chapter-item "><a href="quick_start/use_add_dependency.html"><strong aria-hidden="true">2.6.</strong> 四添加依赖</a></li></ol></li><li class="chapter-item "><a href="syntax_reference/index.html"><strong aria-hidden="true">3.</strong> 语法和配置</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="syntax_reference/syntax_structure.html"><strong aria-hidden="true">3.1.</strong> 语法结构</a></li><li class="chapter-item "><a href="syntax_reference/mermaid_breaking.html"><strong aria-hidden="true">3.2.</strong> 特殊字符</a></li><li class="chapter-item "><a href="syntax_reference/configuration.html"><strong aria-hidden="true">3.3.</strong> 配置</a></li></ol></li><li class="chapter-item "><li class="part-title">📊 图表语法</li><li class="chapter-item "><a href="flowchart/index.html"><strong aria-hidden="true">4.</strong> 流程图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="flowchart/graph.html"><strong aria-hidden="true">4.1.</strong> 绘制</a></li><li class="chapter-item "><a href="flowchart/orientation.html"><strong aria-hidden="true">4.2.</strong> 绘制方向</a></li><li class="chapter-item "><a href="flowchart/node_shapes.html"><strong aria-hidden="true">4.3.</strong> 节点图形</a></li><li class="chapter-item "><a href="flowchart/links_between_nodes.html"><strong aria-hidden="true">4.4.</strong> 连接节点</a></li><li class="chapter-item "><a href="flowchart/special_characters.html"><strong aria-hidden="true">4.5.</strong> 破坏语法的特殊字符</a></li><li class="chapter-item "><a href="flowchart/subgraphs.html"><strong aria-hidden="true">4.6.</strong> 子图</a></li><li class="chapter-item "><a href="flowchart/beta_flowcharts.html"><strong aria-hidden="true">4.7.</strong> 测试流程图</a></li><li class="chapter-item "><a href="flowchart/direction_in_subgraphs.html"><strong aria-hidden="true">4.8.</strong> 子图绘制方向</a></li><li class="chapter-item "><a href="flowchart/interaction.html"><strong aria-hidden="true">4.9.</strong> 交互</a></li><li class="chapter-item "><a href="flowchart/styling_and_classes.html"><strong aria-hidden="true">4.10.</strong> 类样式</a></li><li class="chapter-item "><a href="flowchart/basic-support-for-fontawesome.html"><strong aria-hidden="true">4.11.</strong> 对 fontawesome 的基本支持</a></li><li class="chapter-item "><a href="flowchart/graph_declarations.html"><strong aria-hidden="true">4.12.</strong> 图形声明</a></li><li class="chapter-item "><a href="flowchart/configuration.html"><strong aria-hidden="true">4.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="sequence/index.html"><strong aria-hidden="true">5.</strong> 序列图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="sequence/syntax.html"><strong aria-hidden="true">5.1.</strong> 语法</a></li><li class="chapter-item "><a href="sequence/messages.html"><strong aria-hidden="true">5.2.</strong> 消息</a></li><li class="chapter-item "><a href="sequence/activations.html"><strong aria-hidden="true">5.3.</strong> 活跃</a></li><li class="chapter-item "><a href="sequence/notes.html"><strong aria-hidden="true">5.4.</strong> 笔记</a></li><li class="chapter-item "><a href="sequence/loops.html"><strong aria-hidden="true">5.5.</strong> 循环</a></li><li class="chapter-item "><a href="sequence/alt.html"><strong aria-hidden="true">5.6.</strong> 分支</a></li><li class="chapter-item "><a href="sequence/parallel.html"><strong aria-hidden="true">5.7.</strong> 并行</a></li><li class="chapter-item "><a href="sequence/background.html"><strong aria-hidden="true">5.8.</strong> 背景色</a></li><li class="chapter-item "><a href="sequence/comments.html"><strong aria-hidden="true">5.9.</strong> 注释</a></li><li class="chapter-item "><a href="sequence/code_to_char.html"><strong aria-hidden="true">5.10.</strong> 转义字符的实体代码</a></li><li class="chapter-item "><a href="sequence/sequence_numbers.html"><strong aria-hidden="true">5.11.</strong> 序号</a></li><li class="chapter-item "><a href="sequence/styling.html"><strong aria-hidden="true">5.12.</strong> 样式</a></li><li class="chapter-item "><a href="sequence/configuration.html"><strong aria-hidden="true">5.13.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="class/index.html"><strong aria-hidden="true">6.</strong> 类图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="class/syntax.html"><strong aria-hidden="true">6.1.</strong> 语法</a></li><li class="chapter-item "><a href="class/define_a_class.html"><strong aria-hidden="true">6.2.</strong> 定义类</a></li><li class="chapter-item "><a href="class/defining_members_of_a_class.html"><strong aria-hidden="true">6.3.</strong> 定义成员</a></li><li class="chapter-item "><a href="class/defining_relationship.html"><strong aria-hidden="true">6.4.</strong> 定义关系</a></li><li class="chapter-item "><a href="class/cardinality_multiplicity_on_relations.html"><strong aria-hidden="true">6.5.</strong> 多重性</a></li><li class="chapter-item "><a href="class/annotations_on_classes.html"><strong aria-hidden="true">6.6.</strong> 类的注释</a></li><li class="chapter-item "><a href="class/comments.html"><strong aria-hidden="true">6.7.</strong> 注释</a></li><li class="chapter-item "><a href="class/setting_the_direction_of_the_diagram.html"><strong aria-hidden="true">6.8.</strong> 绘图方向</a></li><li class="chapter-item "><a href="class/interaction.html"><strong aria-hidden="true">6.9.</strong> 交互</a></li><li class="chapter-item "><a href="class/styling.html"><strong aria-hidden="true">6.10.</strong> 样式</a></li><li class="chapter-item "><a href="class/configuration.html"><strong aria-hidden="true">6.11.</strong> 配置</a></li></ol></li><li class="chapter-item "><a href="state/index.html"><strong aria-hidden="true">7.</strong> 状态图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="state/states.html"><strong aria-hidden="true">7.1.</strong> 状态</a></li><li class="chapter-item "><a href="state/transitions.html"><strong aria-hidden="true">7.2.</strong> 过渡</a></li><li class="chapter-item "><a href="state/start-and-end.html"><strong aria-hidden="true">7.3.</strong> 开始和结束</a></li><li class="chapter-item "><a href="state/composite-states.html"><strong aria-hidden="true">7.4.</strong> 复合状态</a></li><li class="chapter-item "><a href="state/choice.html"><strong aria-hidden="true">7.5.</strong> 选择</a></li><li class="chapter-item "><a href="state/forks.html"><strong aria-hidden="true">7.6.</strong> 克隆</a></li><li class="chapter-item "><a href="state/notes.html"><strong aria-hidden="true">7.7.</strong> 笔记</a></li><li class="chapter-item "><a href="state/concurrency.html"><strong aria-hidden="true">7.8.</strong> 并发</a></li><li class="chapter-item "><a href="state/setting-the-direction-of-the-diagram.html"><strong aria-hidden="true">7.9.</strong> 绘制方向</a></li><li class="chapter-item "><a href="state/comments.html"><strong aria-hidden="true">7.10.</strong> 注释</a></li><li class="chapter-item "><a href="state/styling.html"><strong aria-hidden="true">7.11.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="entity_relationship/index.html"><strong aria-hidden="true">8.</strong> ER图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="entity_relationship/syntax.html"><strong aria-hidden="true">8.1.</strong> 语法</a></li><li class="chapter-item "><a href="entity_relationship/styling.html"><strong aria-hidden="true">8.2.</strong> 样式</a></li></ol></li><li class="chapter-item "><a href="user_journey.html"><strong aria-hidden="true">9.</strong> 用户旅程图</a></li><li class="chapter-item "><a href="gantt/index.html"><strong aria-hidden="true">10.</strong> 甘特图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="gantt/note.html"><strong aria-hidden="true">10.1.</strong> 笔记</a></li><li class="chapter-item "><a href="gantt/syntax.html"><strong aria-hidden="true">10.2.</strong> 语法</a></li><li class="chapter-item "><a href="gantt/setting-dates.html"><strong aria-hidden="true">10.3.</strong> 设置日期</a></li><li class="chapter-item "><a href="gantt/comments.html"><strong aria-hidden="true">10.4.</strong> 注释</a></li><li class="chapter-item "><a href="gantt/styling.html"><strong aria-hidden="true">10.5.</strong> 样式</a></li><li class="chapter-item "><a href="gantt/today-marker.html"><strong aria-hidden="true">10.6.</strong> 当日标记</a></li><li class="chapter-item "><a href="gantt/configuration.html"><strong aria-hidden="true">10.7.</strong> 配置</a></li><li class="chapter-item "><a href="gantt/interaction.html"><strong aria-hidden="true">10.8.</strong> 交互</a></li></ol></li><li class="chapter-item "><a href="pie/index.html"><strong aria-hidden="true">11.</strong> 饼图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pie/syntax.html"><strong aria-hidden="true">11.1.</strong> 语法</a></li><li class="chapter-item "><a href="pie/example.html"><strong aria-hidden="true">11.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="requirement/index.html"><strong aria-hidden="true">12.</strong> 需求图</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="requirement/syntax.html"><strong aria-hidden="true">12.1.</strong> 语法</a></li><li class="chapter-item "><a href="requirement/example.html"><strong aria-hidden="true">12.2.</strong> 样例</a></li></ol></li><li class="chapter-item "><a href="examples/index.html"><strong aria-hidden="true">13.</strong> 其他样例</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="examples/pie.html"><strong aria-hidden="true">13.1.</strong> 基本饼图</a></li><li class="chapter-item "><a href="examples/sequence.html"><strong aria-hidden="true">13.2.</strong> 基本序列图</a></li><li class="chapter-item "><a href="examples/flowchart.html"><strong aria-hidden="true">13.3.</strong> 基本流程图</a></li><li class="chapter-item "><a href="examples/flowchart_styling.html"><strong aria-hidden="true">13.4.</strong> 流程图和样式</a></li><li class="chapter-item "><a href="examples/sequence_loop.html"><strong aria-hidden="true">13.5.</strong> 序列图:循环，分支</a></li><li class="chapter-item "><a href="examples/sequence_message.html"><strong aria-hidden="true">13.6.</strong> 序列图:自循环</a></li></ol></li><li class="chapter-item "><li class="part-title">⚙️ 部署和配置</li><li class="chapter-item "><a href="tutorials.html"><strong aria-hidden="true">14.</strong> 教程</a></li><li class="chapter-item "><a href="usage/index.html"><strong aria-hidden="true">15.</strong> API 用法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/using_mermaid.html"><strong aria-hidden="true">15.1.</strong> 使用Mermaid</a></li><li class="chapter-item "><a href="usage/simple_full_example.html"><strong aria-hidden="true">15.2.</strong> 简单样例</a></li><li class="chapter-item "><a href="usage/notes.html"><strong aria-hidden="true">15.3.</strong> 注意</a></li><li class="chapter-item "><a href="usage/enable_click_event_and_tags_in_nodes.html"><strong aria-hidden="true">15.4.</strong> 在节点中启用点击事件和标签</a></li><li class="chapter-item "><a href="usage/security_level.html"><strong aria-hidden="true">15.5.</strong> 安全级别</a></li><li class="chapter-item "><a href="usage/usage_with_webpack.html"><strong aria-hidden="true">15.6.</strong> 与webpack使用</a></li><li class="chapter-item "><a href="usage/api_usage.html"><strong aria-hidden="true">15.7.</strong> api用法</a></li><li class="chapter-item "><a href="usage/example_of_a_marked_renderer.html"><strong aria-hidden="true">15.8.</strong> 于marked使用样例</a></li><li class="chapter-item "><a href="usage/advanced_usage.html"><strong aria-hidden="true">15.9.</strong> 高级用法</a></li><li class="chapter-item "><a href="usage/configuration.html"><strong aria-hidden="true">15.10.</strong> 配置</a></li><li class="chapter-item "><a href="usage/using_the_initialize_call.html"><strong aria-hidden="true">15.11.</strong> 调用initialize</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_object.html"><strong aria-hidden="true">15.12.</strong> 使用mermaid对象</a></li><li class="chapter-item "><a href="usage/using_the_mermaid_config.html"><strong aria-hidden="true">15.13.</strong> 使用mermaid配置</a></li><li class="chapter-item "><a href="usage/using_the_mermaidinit_call.html"><strong aria-hidden="true">15.14.</strong> 调用mermaid.init</a></li></ol></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">16.</strong> Mermaid API</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">17.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">18.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">19.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">20.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 杂项</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">21.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">22.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 贡献和社区</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">23.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">24.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">25.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">26.</strong> Adding Diagrams</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">原文</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">📔 Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">27.</strong> About Mermaid</a></li><li class="chapter-item "><a href="n00b-gettingStarted.html"><strong aria-hidden="true">28.</strong> Deployment</a></li><li class="chapter-item "><a href="n00b-syntaxReference.html"><strong aria-hidden="true">29.</strong> Syntax and Configuration</a></li><li class="chapter-item affix "><li class="part-title">📊 Diagram Syntax</li><li class="chapter-item "><a href="flowchart.html"><strong aria-hidden="true">30.</strong> Flowchart</a></li><li class="chapter-item "><a href="sequenceDiagram.html"><strong aria-hidden="true">31.</strong> Sequence diagram</a></li><li class="chapter-item "><a href="classDiagram.html"><strong aria-hidden="true">32.</strong> Class Diagram</a></li><li class="chapter-item "><a href="stateDiagram.html"><strong aria-hidden="true">33.</strong> State Diagram</a></li><li class="chapter-item "><a href="entityRelationshipDiagram.html"><strong aria-hidden="true">34.</strong> Entity Relationship Diagram</a></li><li class="chapter-item "><a href="user-journey.html"><strong aria-hidden="true">35.</strong> User Journey</a></li><li class="chapter-item "><a href="gantt.html"><strong aria-hidden="true">36.</strong> Gantt</a></li><li class="chapter-item expanded "><a href="pie.html" class="active"><strong aria-hidden="true">37.</strong> Pie Chart</a></li><li class="chapter-item "><a href="requirementDiagram.html"><strong aria-hidden="true">38.</strong> Requirement Diagram</a></li><li class="chapter-item "><a href="examples.html"><strong aria-hidden="true">39.</strong> Other Examples</a></li><li class="chapter-item affix "><li class="part-title">⚙️ Deployment and Configuration</li><li class="chapter-item "><a href="Tutorials.html"><strong aria-hidden="true">40.</strong> Tutorials</a></li><li class="chapter-item "><a href="usage.html"><strong aria-hidden="true">41.</strong> API-Usage</a></li><li class="chapter-item "><a href="Setup.html"><strong aria-hidden="true">42.</strong> Mermaid API Configuration</a></li><li class="chapter-item "><a href="directives.html"><strong aria-hidden="true">43.</strong> Directives</a></li><li class="chapter-item "><a href="theming.html"><strong aria-hidden="true">44.</strong> Theming</a></li><li class="chapter-item "><a href="mermaidCLI.html"><strong aria-hidden="true">45.</strong> Mermaid CLI</a></li><li class="chapter-item "><a href="n00b-advanced.html"><strong aria-hidden="true">46.</strong> Advanced usage</a></li><li class="chapter-item affix "><li class="part-title">📚 Misc</li><li class="chapter-item "><a href="integrations.html"><strong aria-hidden="true">47.</strong> Use-Cases and Integrations</a></li><li class="chapter-item "><a href="faq.html"><strong aria-hidden="true">48.</strong> FAQ</a></li><li class="chapter-item affix "><li class="part-title">🙌 Contributions and Community</li><li class="chapter-item "><a href="n00b-overview.html"><strong aria-hidden="true">49.</strong> Overview for Beginners</a></li><li class="chapter-item "><a href="development.html"><strong aria-hidden="true">50.</strong> Development and Contribution</a></li><li class="chapter-item "><a href="CHANGELOG.html"><strong aria-hidden="true">51.</strong> Changelog</a></li><li class="chapter-item "><a href="newDiagram.html"><strong aria-hidden="true">52.</strong> Adding Diagrams</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Mermaid zh-cn doc</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mermaid-js/mermaid/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hellowac/mermaid_doc/edit/gh-pages/src/pie.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pie-chart-diagrams"><a class="header" href="#pie-chart-diagrams">Pie chart diagrams</a></h1>
+<blockquote>
+<p>A pie chart (or a circle chart) is a circular statistical graphic, which is divided into slices to illustrate numerical proportion. In a pie chart, the arc length of each slice (and consequently its central angle and area), is proportional to the quantity it represents. While it is named for its resemblance to a pie which has been sliced, there are variations on the way it can be presented. The earliest known pie chart is generally credited to William Playfair's Statistical Breviary of 1801
+-Wikipedia</p>
+</blockquote>
+<p>Mermaid can render Pie Chart diagrams.</p>
+<pre><code class="language-mermaid-example">pie title Pets adopted by volunteers
+    &quot;Dogs&quot; : 386
+    &quot;Cats&quot; : 85
+    &quot;Rats&quot; : 15
+</code></pre>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
+<p>Drawing a pie chart is really simple in mermaid.</p>
+<ul>
+<li>Start with <code>pie</code> keyword to begin the diagram</li>
+<li>Followed by <code>title</code> keyword and its value in string to give a title to the pie-chart. This is <em><strong>OPTIONAL</strong></em></li>
+<li>Followed by dataSet
+<ul>
+<li><code>label</code> for a section in the pie diagram within <code>&quot; &quot;</code> quotes.</li>
+<li>Followed by <code>:</code> colon as separator</li>
+<li>Followed by <code>positive numeric value</code> (supported upto two decimal places)</li>
+</ul>
+</li>
+</ul>
+<p>[pie]
+[title] [titlevalue]  (OPTIONAL)
+&quot;[datakey1]&quot; : [dataValue1]
+&quot;[datakey2]&quot; : [dataValue2]
+&quot;[datakey3]&quot; : [dataValue3]
+.
+.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-mermaid-example">pie
+    title Key elements in Product X
+    &quot;Calcium&quot; : 42.96
+    &quot;Potassium&quot; : 50.05
+    &quot;Magnesium&quot; : 10.01
+    &quot;Iron&quot; :  5
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="gantt.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="requirementDiagram.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="gantt.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="requirementDiagram.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
