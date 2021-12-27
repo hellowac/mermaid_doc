@@ -1,0 +1,18 @@
+[book]
+authors = ["hellowac"]
+language = "zh-cn"
+multilingual = false
+src = "src"
+title = "Mermaid zh-cn doc"
+
+[build]
+build-dir = "docs"
+
+[output.html]
+git-repository-url = "https://github.com/mermaid-js/mermaid/"
+edit-url-template = "https://github.com/hellowac/mermaid_doc/edit/gh-pages/{path}"
+
+
+[output.html.fold]
+enable = true
+level = 0
